@@ -1,0 +1,39 @@
+img {
+    width:400px ;
+    height:400px ;
+}
+
+body {
+    font: normal 20px Dosis;
+    background-color: #011936;
+}
+
+section {
+    width: 1200px;
+    column-count: 2;
+    column-gap: 6px;
+    column-rule-width: 1px;
+    background-color: #F4FFFD;
+    margin: auto;
+    box-shadow: 10px 10px 1px #ED254E;
+}
+
+#ptit {
+    font: normal 60px Lobster;
+    color: #F9DC5C;
+    text-shadow: 3px 3px 1px #ED254E;
+    text-align: center;
+}
+
+footer {
+    font: normal 25px Pacifico;
+    color: #F4FFFD;
+    text-align: center;
+}
+
+.clock {
+    font: normal 60px Pacifico;
+    text-align: center;
+    color: #F4FFFD;
+
+}
