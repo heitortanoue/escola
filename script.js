@@ -1,5 +1,6 @@
 let tarefas = [
-    'alo', 'alo so que 2'
+    'Terminar a lista do Vini',
+    'Tarefa Rodriguinho (Ap. 6) (601, 603, 606, 609, 611, 615, 619, 620)',
 ]
 
 function clock() { // We create a new Date object and assign it to a variable called "time".
@@ -139,7 +140,11 @@ const divTarefa = document.querySelector('#tarefas')
 renderTarefas = () => {
     for (item in tarefas) {
         let p = document.createElement('div')
+        let inputcheckbox = document.createElement('input')
+        inputcheckbox.setAttribute('type', 'checkbox')
+        p.setAttribute('class', 'tarefa')
         let text = document.createTextNode(tarefas[item])
+        p.appendChild(inputcheckbox)
         p.appendChild(text)
         divTarefa.appendChild(p)
 

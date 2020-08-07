@@ -1,27 +1,37 @@
 img {
     width:400px ;
     height:400px ;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    border: 3px solid black;
 }
 
 body {
     font: normal 20px Dosis;
-    background-color: #011936;
+    background-color: #325D79;
+}
+
+.tarefa {
+    font: normal 26px Dosis;
 }
 
 section {
+    padding: 20px;
     width: 1200px;
     column-count: 2;
-    column-gap: 6px;
+    text-align: center;
     column-rule-width: 1px;
-    background-color: #F4FFFD;
+    background-color: #EFEEEE;
     margin: auto;
-    box-shadow: 10px 10px 1px #ED254E;
+    box-shadow: 15px 15px 1px #98D7D1;
 }
 
 #ptit {
     font: normal 60px Lobster;
-    color: #F9DC5C;
-    text-shadow: 3px 3px 1px #ED254E;
+    color: #F26627;
+    text-shadow: 4px 4px 1px #EFEEEE;
     text-align: center;
 }
 
@@ -36,4 +46,47 @@ footer {
     text-align: center;
     color: #F4FFFD;
 
+}
+
+input[type='button'] {
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    background-color: #F26627;
+    font: normal 12pt Dosis;
+    color: #EFEEEE;
+    border-style: outset;
+    border-color: #F9A26C;
+    border-width: thick;
+}
+
+input[type='button']:hover {
+    width: 1;
+    height: 1;
+    text-align: center;
+    background-color: #EFEEEE;
+    font: normal 1 Dosis;
+    font-weight: bold;
+    color: #F26627;
+    border-style: inset;
+    border-color: #F9A26C;
+    border-width: thick;
+}
+
+input[type='button']:active {
+    width: 1;
+    height: 1;
+    text-align: center;
+    background-color: #F26627;
+    font: normal 1 Dosis;
+    font-weight: bold;
+    color: #EFEEEE;
+    border-style: inset;
+    border-color:#F9A26C;
+    border-width: thick;
+}
+
+input[type='checkbox'] {
+    width: 20px;
+    height: 20px;
 }
