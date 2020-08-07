@@ -1,7 +1,16 @@
 let tarefas = [
     'Terminar a lista do Vini',
     'Tarefa Rodriguinho (Ap. 6) (601, 603, 606, 609, 611, 615, 619, 620)',
+    'Tarefa Renan (Ap. 5) (574, 570, 571, 577, 579, 563 ,565)',
 ]
+
+Storage.prototype.setObject = function(key, value) {
+    this.setItem(key, JSON.stringify(value));
+}
+
+Storage.prototype.getObject = function(key) {
+    return JSON.parse(this.getItem(key));
+}
 
 function clock() { // We create a new Date object and assign it to a variable called "time".
     var time = new Date(),
@@ -26,17 +35,17 @@ function clock() { // We create a new Date object and assign it to a variable ca
 }
 setInterval(clock, 1000);
 
-var d = new Date();
+var d = new Date()
 var weekday = new Array(7);
 weekday[0] = "domingo";
 weekday[1] = "segunda-feira";
 weekday[2] = "terça-feira";
 weekday[3] = "quarta-feira";
 weekday[4] = "quinta-feira";
-weekday[5] = "sexta-feira;"
+weekday[5] = "sexta-feira"
 weekday[6] = "sábado";
 
-var n = 'quinta-feira'
+var n = weekday[d.getDay()]
 var h = d.getHours();
 let r
 
@@ -149,6 +158,7 @@ renderTarefas = () => {
         divTarefa.appendChild(p)
 
     }
-}
+} 
 
 renderTarefas()
+
