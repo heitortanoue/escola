@@ -61,7 +61,7 @@ if (18 <= h && h < 24) {
 if (0 <= h && h < 6) {
     r = 'Boa madrugada'
 }
-
+/*
 imagem = (i) => {
     if (i == 'aulas') {
         switch (n) {
@@ -117,19 +117,19 @@ imagem = (i) => {
                 return 'semaula.png'
         }
     }
-}
+} */
 
 const tit = document.querySelector('#ptit')
 tit.innerHTML = `${r}, hoje é ${n}!`
 
 const img1 = document.querySelector('#img1')
-img1.setAttribute('src', imagem("aulas"))
+//img1.setAttribute('src', imagem("aulas"))
 
 const bAulas = document.getElementById('baulas')
 const bAulasEx = document.getElementById('baulasex')
 const bPlantoes = document.getElementById('bplantoes')
 
-bAulas.onclick = () => {
+/*bAulas.onclick = () => {
     img1.setAttribute('src', imagem("aulas"))
     img1.setAttribute('style', 'width:400px;')
 }
@@ -142,9 +142,13 @@ bAulasEx.onclick = () => {
 bPlantoes.onclick = () => {
     img1.setAttribute('src', imagem("plantoes"))
     img1.setAttribute('style', 'width:500px; height: 300px')
-}
+} */
 
 const divTarefa = document.querySelector('#tarefas')
+
+const coordsHorario = [
+    [0,1,218,121]
+]
 
 renderTarefas = () => {
     for (item in tarefas) {
@@ -159,6 +163,22 @@ renderTarefas = () => {
 
     }
 } 
+let cortarImagem = (coord1, coord2, coord3, coord4, imagem) => {
+    var file = 'new_name.' + 'png'
+Jimp.read(imagem).then(function (lenna) {
+    lenna.crop(coord1, coord2, coord3, coord4)
+
+         .getBase64(Jimp.MIME_JPEG, function (err, src) {
+              var img = document.querySelector('#img1');
+              img.setAttribute("src", src);
+
+         });
+}).catch(function (err) {
+    console.error(err);
+});
+}
+
+cortarImagem ( coordsHorario[0][0] , coordsHorario[0][1] , coordsHorario[0][2] , coordsHorario[0][3] , 'sexta.png')
 
 renderTarefas()
 
