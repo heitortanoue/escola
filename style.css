@@ -1,6 +1,6 @@
 img {
-    width:400px ;
-    height:400px ;
+    width: 400px;
+    height: 400px;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -11,21 +11,24 @@ img {
 body {
     font: normal 20px Dosis;
     background-color: #325D79;
+    min-width: 650px
 }
 
 .tarefa {
     font: normal 26px Dosis;
+    margin-left: 10%;
 }
 
 section {
     padding: 20px;
-    width: 1200px;
-    column-count: 2;
-    text-align: center;
-    column-rule-width: 1px;
-    background-color: #EFEEEE;
+    width: calc(100% - 200px);
     margin: auto;
     box-shadow: 15px 15px 1px #98D7D1;
+    background-color: #EFEEEE;
+    background-clip: padding-box;
+    border: 10px solid transparent;
+    border-radius: 20px;
+    padding-bottom: 4%;
 }
 
 #ptit {
@@ -39,7 +42,7 @@ footer {
     font: normal 25px Pacifico;
     color: #F4FFFD;
     text-align: center;
-    padding: 30px;
+    padding: 2%;
 }
 
 .clock {
@@ -83,7 +86,7 @@ input[type='button']:active {
     font-weight: bold;
     color: #EFEEEE;
     border-style: inset;
-    border-color:#F9A26C;
+    border-color: #F9A26C;
     border-width: thick;
 }
 
@@ -91,3 +94,21 @@ input[type='checkbox'] {
     width: 20px;
     height: 20px;
 }
+
+.col {
+      flex: 50%;
+  }
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-flow: row wrap;
+  }
+
+div {
+      border: 20px;
+  }
+
+h2 {
+      text-align: center
+  }

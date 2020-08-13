@@ -7,7 +7,8 @@
     <title>TerceirãoSEB</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="icone.png">
-    <link href="https://fonts.googleapis.com/css2?family=Dosis&family=Lobster&family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis&family=Lobster&family=Pacifico&display=swap"
+        rel="stylesheet">
     <script src="jimp.js"></script>
 </head>
 
@@ -15,15 +16,19 @@
     <div id='ptit'></div>
     <div class='clock'></div>
     <br>
-    <section>
-        <h2>As aulas de hoje são: <input type="button" value="Aulas" id='baulas'> <input type="button" value="Plantões" id='bplantoes'> <input type="button" value="Aulas Extras" id='baulasex'></h2>
+    <section class='container'>
+        <div class='row'>
+        <div class='col' id='divaulas'>
+        <h2>As aulas de hoje são: <input type="button" value="Aulas" id='baulas'> <input type="button" value="Plantões"
+                id='bplantoes'> <input type="button" value="Aulas Extras" id='baulasex'></h2>
 
         <img alt="aula" id='img1'>
-        
-        <br>
+        </div>
+        <div class='col' id='divtarefas'>
         <h2>As tarefas de hoje são:</h2>
         <div id='tarefas'></div>
-
+</div>
+</div>
     </section>
     <footer>
         @HeitorTanoue
