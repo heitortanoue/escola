@@ -4,11 +4,43 @@ let tarefas = [
     'Tarefa Renan (Ap. 5) (574, 570, 571, 577, 579, 563 ,565)',
 ]
 
-Storage.prototype.setObject = function(key, value) {
+const dim = {
+    aulas: [190, 155],
+    plantoes: [287, 123],
+    aulasex: [251, 122]
+}
+const asp1 = -1
+
+const coordsHorario = [
+    //aulas
+    [asp1, -1, dim.aulas[0], dim.aulas[1]], //segunda
+    [asp1, 173, dim.aulas[0], dim.aulas[1]], //terça
+    [asp1, 357, dim.aulas[0], dim.aulas[1]], //quarta
+    [asp1, 538, dim.aulas[0], dim.aulas[1]], //quinta
+    [asp1, 720, dim.aulas[0], dim.aulas[1]], //sexta
+    [asp1, 903, dim.aulas[0], dim.aulas[1]], //sabado
+
+    //plantoes
+    [asp1, -1, dim.plantoes[0], dim.plantoes[1]], //segunda
+    [asp1, 127, dim.plantoes[0], dim.plantoes[1]], //terça
+    [asp1, 257, dim.plantoes[0], dim.plantoes[1]], //quarta
+    [asp1, 386, dim.plantoes[0], dim.plantoes[1]], //quinta
+    [asp1, 516, dim.plantoes[0], dim.plantoes[1]], //sexta
+
+    //aulas extras
+    [asp1, -1, dim.aulasex[0], dim.aulasex[1]], //segunda
+    [asp1, 129, dim.aulasex[0], dim.aulasex[1]], //terça
+    [asp1, 259, dim.aulasex[0], dim.aulasex[1]], //quarta
+    [asp1, 388, dim.aulasex[0], dim.aulasex[1]], //quinta
+    [asp1, 518, dim.aulasex[0], dim.aulasex[1]], //sexta
+
+]
+
+Storage.prototype.setObject = function (key, value) {
     this.setItem(key, JSON.stringify(value));
 }
 
-Storage.prototype.getObject = function(key) {
+Storage.prototype.getObject = function (key) {
     return JSON.parse(this.getItem(key));
 }
 
@@ -61,22 +93,37 @@ if (18 <= h && h < 24) {
 if (0 <= h && h < 6) {
     r = 'Boa madrugada'
 }
-/*
+
 imagem = (i) => {
+    if (i == 'aulas') {
+        return 'horarioescola.jpeg'
+    }
+    if (i == 'plantoes') {
+        return 'horarioplantoes.jpeg'
+    }
+    if (i == 'aulasex') {
+        return 'horarioextra.png'
+    }
+}
+
+dia = (i, num) => {
+    pInt = (a, b) => {
+        return parseInt(coordsHorario[a][b])
+    }
     if (i == 'aulas') {
         switch (n) {
             case 'segunda-feira':
-                return 'segunda.png'
+                return pInt(0, num)
             case 'terça-feira':
-                return 'terça.png'
+                return pInt(1, num)
             case 'quarta-feira':
-                return 'quarta.png'
+                return pInt(2, num)
             case 'quinta-feira':
-                return 'quinta.png'
+                return pInt(3, num)
             case 'sexta-feira':
-                return 'sexta.png'
+                return pInt(4, num)
             case 'sábado':
-                return 'sabado.png'
+                return pInt(5, num)
             case 'domingo':
                 return 'semaula.png'
         }
@@ -84,17 +131,17 @@ imagem = (i) => {
     if (i == 'plantoes') {
         switch (n) {
             case 'segunda-feira':
-                return 'psegunda.png'
+                return pInt(6, num)
             case 'terça-feira':
-                return 'pterça.png'
+                return pInt(7, num)
             case 'quarta-feira':
-                return 'pquarta.png'
+                return pInt(8, num)
             case 'quinta-feira':
-                return 'pquinta.png'
+                return pInt(9, num)
             case 'sexta-feira':
-                return 'psexta.png'
+                return pInt(10, num)
             case 'sábado':
-                return 'psabado.png'
+                return 'semaula.png'
             case 'domingo':
                 return 'semaula.png'
         }
@@ -102,53 +149,60 @@ imagem = (i) => {
     if (i == 'aulasex') {
         switch (n) {
             case 'segunda-feira':
-                return 'esegunda.png'
+                return pInt(11, num)
             case 'terça-feira':
-                return 'eterça.png'
+                return pInt(12, num)
             case 'quarta-feira':
-                return 'equarta.png'
+                return pInt(13, num)
             case 'quinta-feira':
-                return 'equinta.png'
+                return pInt(14, num)
             case 'sexta-feira':
-                return 'esexta.png'
+                return pInt(15, num)
             case 'sábado':
-                return 'esabado.png'
+                return 'semaula.png'
             case 'domingo':
                 return 'semaula.png'
         }
     }
-} */
+}
+
+cf = (str) => {
+    if (((n == 'sábado' || n == 'domingo') && (str == 'aulasex' || str == 'plantoes')) || (n== 'domingo' && (str == 'aulas'))) {
+        return 'semaula.png'
+    } else {
+    cortarImagem(dia(str, 0), dia(str, 1), dia(str, 2), dia(str, 3), imagem(str))
+    }
+}
 
 const tit = document.querySelector('#ptit')
 tit.innerHTML = `${r}, hoje é ${n}!`
 
 const img1 = document.querySelector('#img1')
-//img1.setAttribute('src', imagem("aulas"))
 
 const bAulas = document.getElementById('baulas')
 const bAulasEx = document.getElementById('baulasex')
 const bPlantoes = document.getElementById('bplantoes')
 
-/*bAulas.onclick = () => {
-    img1.setAttribute('src', imagem("aulas"))
+bAulas.onclick = () => {
+    img1.setAttribute('src', cf('aulas'))
     img1.setAttribute('style', 'width:400px;')
 }
 
 bAulasEx.onclick = () => {
-    img1.setAttribute('src', imagem("aulasex"))
-    img1.setAttribute('style', 'width:500px; height: 300px')
+    img1.setAttribute('src', cf('aulasex'))
+    if(cf('aulasex') != 'semaula.png') {img1.setAttribute('style', 'width:500px; height: 300px')} else {
+        img1.setAttribute('style', 'width:400px;')
+    }
 }
 
 bPlantoes.onclick = () => {
-    img1.setAttribute('src', imagem("plantoes"))
-    img1.setAttribute('style', 'width:500px; height: 300px')
-} */
+    img1.setAttribute('src', cf('plantoes'))
+    if(cf('plantoes') != 'semaula.png') {img1.setAttribute('style', 'width:500px; height: 300px')} else {
+        img1.setAttribute('style', 'width:400px;')
+    }
+}
 
 const divTarefa = document.querySelector('#tarefas')
-
-const coordsHorario = [
-    [0,1,218,121]
-]
 
 renderTarefas = () => {
     for (item in tarefas) {
@@ -162,23 +216,24 @@ renderTarefas = () => {
         divTarefa.appendChild(p)
 
     }
-} 
-let cortarImagem = (coord1, coord2, coord3, coord4, imagem) => {
-    var file = 'new_name.' + 'png'
-Jimp.read(imagem).then(function (lenna) {
-    lenna.crop(coord1, coord2, coord3, coord4)
-
-         .getBase64(Jimp.MIME_JPEG, function (err, src) {
-              var img = document.querySelector('#img1');
-              img.setAttribute("src", src);
-
-         });
-}).catch(function (err) {
-    console.error(err);
-});
 }
 
-cortarImagem ( coordsHorario[0][0] , coordsHorario[0][1] , coordsHorario[0][2] , coordsHorario[0][3] , 'sexta.png')
+let cortarImagem = (coord1, coord2, coord3, coord4, imagem) => {
+    var file = 'new_name.' + 'png'
+    Jimp.read(imagem).then(function (lenna) {
+        lenna.crop(coord1, coord2, coord3, coord4)
+
+            .getBase64(Jimp.MIME_JPEG, function (err, src) {
+                var img = document.querySelector('#img1');
+                img.setAttribute("src", src);
+
+            });
+        lenna.write('./sextaaaaaa.png')
+    }).catch(function (err) {
+        console.error(err);
+    });
+}
+
+img1.setAttribute('src', cf('aulas'))
 
 renderTarefas()
-
