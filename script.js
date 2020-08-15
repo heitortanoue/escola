@@ -158,7 +158,7 @@ cf = (str) => {
             return 'horarioplantoes.jpeg'
         }
         if (i == 'aulasex') {
-            return 'horarioextra.png'
+            return 'horarioextra.jpeg'
         }
     }
 
@@ -218,7 +218,7 @@ renderTarefas = () => {
         let p = document.createElement('div')
         let inputcheckbox = document.createElement('input')
         inputcheckbox.setAttribute('type', 'checkbox')
-        inputcheckbox.setAttribute('class', 'save-cb-state')
+        inputcheckbox.setAttribute('class', 'classCheck')
         p.setAttribute('class', 'tarefa')
         let text = document.createTextNode(tarefas[item])
         p.appendChild(inputcheckbox)
@@ -229,3 +229,4 @@ renderTarefas = () => {
 
 renderTarefas()
 img1.setAttribute('src', cf('aulas'))
+

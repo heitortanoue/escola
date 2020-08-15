@@ -1,6 +1,15 @@
+@viewport {
+    width: device-width ;
+    zoom: 1.0 ;
+  }
+
+@-ms-viewport {
+    width: device-width ;
+  }
+
 img {
-    width: 400px;
-    height: 400px;
+    width:65%;
+    height: 65%;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -112,3 +121,5 @@ div {
 h2 {
       text-align: center
   }
+
+
