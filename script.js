@@ -182,6 +182,14 @@ cf = (str) => {
 
 }
 
+let semAula = (inp) => {
+    if (cf(inp) != 'semaula.png') {
+        img1.setAttribute('style', 'width:500px; height: 300px')
+    } else {
+        img1.setAttribute('style', 'width:400px;')
+    }
+}
+
 const img1 = document.querySelector('#img1')
 
 const bAulas = document.getElementById('baulas')
@@ -190,25 +198,17 @@ const bPlantoes = document.getElementById('bplantoes')
 
 bAulas.onclick = () => {
     img1.setAttribute('src', cf('aulas'))
-    img1.setAttribute('style', 'width:400px;')
+    //semAula('aulas')
 }
 
 bAulasEx.onclick = () => {
     img1.setAttribute('src', cf('aulasex'))
-    if (cf('aulasex') != 'semaula.png') {
-        img1.setAttribute('style', 'width:500px; height: 300px')
-    } else {
-        img1.setAttribute('style', 'width:400px;')
-    }
+    //semAula('aulasex')
 }
 
 bPlantoes.onclick = () => {
     img1.setAttribute('src', cf('plantoes'))
-    if (cf('plantoes') != 'semaula.png') {
-        img1.setAttribute('style', 'width:500px; height: 300px')
-    } else {
-        img1.setAttribute('style', 'width:400px;')
-    }
+    //semAula('plantoes')
 }
 
 const divTarefa = document.querySelector('#tarefas')
@@ -229,4 +229,3 @@ renderTarefas = () => {
 
 renderTarefas()
 img1.setAttribute('src', cf('aulas'))
-
