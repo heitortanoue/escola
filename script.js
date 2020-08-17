@@ -2,7 +2,9 @@ let tarefas = [
     'Tarefa Lucas (Ap. 5) (561, 563, 565, 570, 574, 580)',
     'Tarefa Renan (Ap. 6) (581, 594, 584, 586 e 582)',
     'Tarefa Rose (Ap. 6) (623, 629, 630, 634, 636 e 639)'
-]
+];
+
+let isChecked = []
 
 const dim = {
     aulas: [190, 155],
@@ -215,6 +217,7 @@ const divTarefa = document.querySelector('#tarefas')
 
 renderTarefas = () => {
     for (item in tarefas) {
+        isChecked.push(false)
         let p = document.createElement('div')
         let inputcheckbox = document.createElement('input')
         inputcheckbox.setAttribute('type', 'checkbox')
@@ -224,8 +227,55 @@ renderTarefas = () => {
         p.appendChild(inputcheckbox)
         p.appendChild(text)
         divTarefa.appendChild(p)
+
+        inputcheckbox.addEventListener('change', function() {
+            function getSelectedCheckboxValues(name) {
+                const checkboxes = document.querySelectorAll(`input[class=${name}]:checked`);
+                let values = [];
+                checkboxes.forEach((checkbox) => {
+                    values.push(checkbox.value);
+                });
+                return values;
+            }
+            console.log(getSelectedCheckboxValues('classCheck'))
+        })
+
+        saveToStorage()
     }
+}
+
+if (window.CSS && CSS.supports("color", "var(--primary)")) {
+    var toggleColorMode = function toggleColorMode(e) {
+      // Switch to Light Mode
+      if (e.currentTarget.classList.contains("light--hidden")) {
+        // Sets the custom html attribute
+        document.documentElement.setAttribute("color-mode", "light"); // Sets the user's preference in local storage
+  
+        localStorage.setItem("color-mode", "light");
+        return;
+      }
+      /* Switch to Dark Mode
+      Sets the custom html attribute */
+      document.documentElement.setAttribute("color-mode", "dark"); // Sets the user's preference in local storage
+  
+      localStorage.setItem("color-mode", "dark");
+    }; // Get the buttons in the DOM
+  
+    var toggleColorButtons = document.querySelectorAll(".color-mode__btn"); // Set up event listeners
+  
+    toggleColorButtons.forEach(function(btn) {
+      btn.addEventListener("click", toggleColorMode);
+    });
+  } else {
+    // If the feature isn't supported, then we hide the toggle buttons
+    var btnContainer = document.querySelector(".color-mode__header");
+    btnContainer.style.display = "none";
+  }
+
+saveToStorage = () => {
+    localStorage.setItem('list_todos', JSON.stringify(isChecked))
 }
 
 renderTarefas()
 img1.setAttribute('src', cf('aulas'))
+

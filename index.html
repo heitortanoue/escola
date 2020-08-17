@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html color-mode="light" lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -9,31 +9,43 @@
     <link rel="shortcut icon" href="icone.png">
     <link href="https://fonts.googleapis.com/css2?family=Dosis&family=Lobster&family=Pacifico&display=swap"
         rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="jimp.js"></script>
-    <script src="list.min.js"></script>
 </head>
 
 <body>
     <div id='ptit'></div>
     <div class='clock'></div>
+
+    <div id="btn">
+        <button
+        class="color-mode__btn light--hidden">
+        <i class="fa fa-sun-o"></i>
+      </button>
+      <button
+        class="color-mode__btn dark--hidden">
+        <i class="fa fa-moon-o"></i>
+      </button>
+    </div>
+
     <br>
     <section class='container'>
         <div class='row'>
-        <div class='col' id='divaulas'>
-        <h2>As aulas de hoje são: <input type="button" value="Aulas" id='baulas'> <input type="button" value="Plantões"
-                id='bplantoes'> <input type="button" value="Aulas Extras" id='baulasex'></h2>
-            <div class="imgcontainer">
-                <div class="imgbox">
-                    <img alt="aula" id='img1'>
+            <div class='col' id='divaulas'>
+                <h2>As aulas de hoje são: <input type="button" value="Aulas" id='baulas'> <input type="button"
+                        value="Plantões" id='bplantoes'> <input type="button" value="Aulas Extras" id='baulasex'></h2>
+                <div class="imgcontainer">
+                    <div class="imgbox">
+                        <img alt="aula" id='img1'>
+                    </div>
                 </div>
-            </div>
 
+            </div>
+            <div class='col' id='divtarefas'>
+                <h2>As tarefas de hoje são:</h2>
+                <div id='tarefas'></div>
+            </div>
         </div>
-        <div class='col' id='divtarefas'>
-        <h2>As tarefas de hoje são:</h2>
-        <div id='tarefas'></div>
-</div>
-</div>
     </section>
     <footer>
         @HeitorTanoue

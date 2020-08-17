@@ -1,3 +1,49 @@
+:root {
+    --radius: 50px;
+    --sans: -apple-system, blinkmacsystemfont, "Segoe UI", roboto, oxygen, ubuntu,
+      cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  }
+  
+  :root[color-mode="light"] {
+    --surface1: #C1C6D7;
+    --surface2: #DADDE7;
+    --surface3: #F3F4F7;
+    --element1: #111111;
+    --element2: #222222;
+    --element3: #333333;
+    --elementInverse: #eee;
+    --primary: #F45265;
+    --secondary: #ECCA5B;
+    --secondaryInt: #EAC448;
+    --secondaryMatch: #D0A339;
+    --tertiary: #fff7d6;
+    --box-shadow: 5px 5px 1px #cacaca, -5px -5px 1px #ffffff;
+  }
+  
+  :root[color-mode="dark"] {
+    --surface1: #373F51;
+    --surface2: #4A556D;
+    --surface3: #5B6886;
+    --element1: #eeeeee;
+    --element2: #dddddd;
+    --element3: #cccccc;
+    --elementInverse: #111;
+    --primary: #F56476;
+    --secondary: #F0D67F;
+    --secondaryInt: #EED06D;
+    --secondaryMatch: #DCBA6A;
+    --tertiary: #eee8a9;
+    --box-shadow: 5px 5px 1px #1d1d1d, -5px -5px 1px #272727;
+  }
+
+:root[color-mode='dark'] .dark--hidden {
+    display: none;
+}
+
+:root[color-mode='light'] .light--hidden {
+    display: none;
+}
+
 @viewport {
     width: device-width ;
     zoom: 1.0 ;
@@ -11,7 +57,8 @@
 
 body {
     font: normal 20px Dosis;
-    background-color: #325D79;
+    color: var(--element1);
+    background-color: var(--surface1, #e6e6e6);
     min-width: 250px;
 }
 
@@ -24,8 +71,8 @@ section {
     padding: 20px;
     width: calc(100% - 150px);
     margin: auto;
-    box-shadow: 15px 15px 1px #98D7D1;
-    background-color: #EFEEEE;
+    box-shadow: var(--box-shadow);
+    background-color: var(--surface3, #222222);;
     background-clip: padding-box;
     border: 10px solid transparent;
     border-radius: 20px;
@@ -34,61 +81,61 @@ section {
 
 #ptit {
     font: normal 60px Lobster;
-    color: #F26627;
-    text-shadow: 4px 4px 1px #EFEEEE;
+    color: var(--primary);
+    text-shadow: 4px 4px 1px var(--element1, #eeeeee);
     text-align: center;
 }
 
 footer {
-    font: normal 25px Pacifico;
-    color: #F4FFFD;
+    font: normal 30px Pacifico;
+    color: var(--primary);
     text-align: center;
     padding: 2%;
+    text-shadow: 3px 3px 1px var(--element1, #eeeeee);
 }
 
 .clock {
     font: normal 60px Pacifico;
     text-align: center;
-    color: #F4FFFD;
+    color: var(--element1);
 
 }
 
-input[type='button'] {
-    width: 100px;
+input[type='button'], .color-mode__btn {
+    width: 1;
+    padding-left: 2%;
+    padding-right: 2%;
     height: 40px;
     text-align: center;
-    background-color: #F26627;
-    font: normal 12pt Dosis;
-    color: #EFEEEE;
+    background-color: var(--secondary);
+    font: bolder 14pt Dosis;
+    color: var(--element1);
+    text-shadow: 1px 1px 1px var(--surface1);
     border-style: outset;
-    border-color: #F9A26C;
-    border-width: thick;
+    border-color: var(--secondaryMatch);
+    border-width: thin;
 }
 
-input[type='button']:hover {
+input[type='button']:hover, .color-mode__btn {
     width: 1;
     height: 1;
     text-align: center;
-    background-color: #EFEEEE;
-    font: normal 1 Dosis;
+    background-color: var(--secondaryInt);
     font-weight: bold;
-    color: #F26627;
     border-style: inset;
-    border-color: #F9A26C;
-    border-width: thick;
+    border-color: var(--secondary);
+    border-width: thin;
 }
 
-input[type='button']:active {
+input[type='button']:active, .color-mode__btn {
     width: 1;
     height: 1;
     text-align: center;
-    background-color: #F26627;
-    font: normal 1 Dosis;
+    background-color: var(--secondaryMatch);
     font-weight: bold;
-    color: #EFEEEE;
     border-style: inset;
-    border-color: #F9A26C;
-    border-width: thick;
+    border-color: var(--secondary);
+    border-width: thin;
 }
 
 input[type='checkbox'] {
@@ -139,10 +186,40 @@ h2 {
     min-width: 400px;
   }
 
+  .color-mode__btn {
+      width: 1;
+      height: 1;
+      font: normal 30px Arial;
+      text-align: center;
+  }
+
+  #btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      text-align: center;
+  }
+
+.color-mode__btn {
+width: 50px;
+}
+ 
+
   @media screen and (max-width:550px) {
+    .color-mode__btn {
+        width: 30px;
+        height: 3%;
+        font: normal 16px Arial;
+    }
+  
+    #btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+
     #ptit {
         font: normal 30px Lobster;
-        color: #F26627;
         text-shadow: 2px 2px 1px #EFEEEE;
         text-align: center;
     }
@@ -150,15 +227,12 @@ h2 {
     .clock {
         font: normal 30px Pacifico;
         text-align: center;
-        color: #F4FFFD;
     }
 
       section {
         padding: 10px;
         width: calc(100% - 100px);
         margin: auto;
-        box-shadow: 7px 7px 0.5px #98D7D1;
-        background-color: #EFEEEE;
         background-clip: padding-box;
         border: 5px solid transparent;
         border-radius: 10px;
@@ -188,38 +262,27 @@ h2 {
         width: 60px;
         height: 20px;
         text-align: center;
-        background-color: #F26627;
         font: normal 7pt Dosis;
-        color: #EFEEEE;
         border-style: outset;
-        border-color: #F9A26C;
-        border-width: thin;
     }
     
     input[type='button']:hover {
         width: 1;
         height: 1;
         text-align: center;
-        background-color: #EFEEEE;
         font: normal 1 Dosis;
         font-weight: bold;
-        color: #F26627;
         border-style: inset;
-        border-color: #F9A26C;
-        border-width: thin;
     }
     
     input[type='button']:active {
         width: 1;
         height: 1;
         text-align: center;
-        background-color: #F26627;
         font: normal 1 Dosis;
         font-weight: bold;
         color: #EFEEEE;
         border-style: inset;
-        border-color: #F9A26C;
-        border-width: thin;
     }
     
     input[type='checkbox'] {
@@ -229,7 +292,6 @@ h2 {
 
     footer {
         font: normal 13px Pacifico;
-        color: #F4FFFD;
         text-align: center;
         padding: 2%;
     }
@@ -244,7 +306,6 @@ h2 {
 
     body {
         font: normal 13px Dosis;
-        background-color: #325D79;
     }
   }
 
