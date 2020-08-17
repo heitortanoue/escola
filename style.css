@@ -44,6 +44,11 @@
     display: none;
 }
 
+@keyframes example {
+    from {background-color: red;}
+    to {background-color: yellow;}
+  }
+
 @viewport {
     width: device-width ;
     zoom: 1.0 ;
@@ -53,7 +58,9 @@
     width: device-width ;
   }
 
-
+* {
+    transition: background 0.5s ease;
+}
 
 body {
     font: normal 20px Dosis;
@@ -171,7 +178,7 @@ h2 {
     width: 100%;
     height: 100%;
   
-    border-radius: 10px;;
+    border-radius: 10px;
   }
   
   .imgbox {
@@ -202,6 +209,10 @@ h2 {
 
 .color-mode__btn {
 width: 50px;
+}
+
+.btn-group {
+    text-align: center;
 }
  
 

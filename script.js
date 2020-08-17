@@ -1,7 +1,11 @@
 let tarefas = [
-    'Tarefa Lucas (Ap. 5) (561, 563, 565, 570, 574, 580)',
-    'Tarefa Renan (Ap. 6) (581, 594, 584, 586 e 582)',
-    'Tarefa Rose (Ap. 6) (623, 629, 630, 634, 636 e 639)'
+    'Tarefa Vladmir - HIST. (Ap. 5 - M. 14 - Pág. 250) (261, 265, 266, 267, 268, 270, 275, 276, 278, 279)',
+    'Tarefa João César (Ap. 6 - M. 32) (621, 622, 625, 627, 629, 635)',
+    'Tarefa Guilherme (Ap. 6 - M. 31 - Pág. 33) (601, 603, 608, 609, 612, 613, 614, 616, 619)',
+    'Tarefa Guilherme (Ap. 6 - M. 32 - Pág. 38) (621, 623, 626, 628, 629, 631, 633, 636)',
+    'Tarefa Rodrigo (Ap. 6 - M. 33 - Pág. 232) (641, 642, 645, 648, 650, 653, 658, 659)',
+    'Tarefa LeoGeo (Ap. 6 - M. 36 - Pág. 179) (701, 703, 705, 711, 713, 715, 710, 713)',
+    'Tarefa Marcus Vinícius (Ap. 6 - M. 33 - Pág. 172) (641, 643, 645, 646, 648)',
 ];
 
 let isChecked = []
@@ -15,7 +19,7 @@ const asp1 = -1
 
 const coordsHorario = [
     //aulas
-    [asp1, -1, dim.aulas[0], dim.aulas[1]], //segunda
+    [asp1, -1, dim.aulas[0], dim.aulas[1] - 5], //segunda
     [asp1, 173, dim.aulas[0], dim.aulas[1]], //terça
     [asp1, 357, dim.aulas[0], dim.aulas[1]], //quarta
     [asp1, 538, dim.aulas[0], dim.aulas[1]], //quinta
@@ -38,58 +42,60 @@ const coordsHorario = [
 
 ]
 
-function clock() { // We create a new Date object and assign it to a variable called "time".
-    var time = new Date(),
+new Promise(function (resolve, reject) {
+    function clock() { // We create a new Date object and assign it to a variable called "time".
+        var time = new Date(),
 
-        // Access the "getHours" method on the Date object with the dot accessor.
-        hours = time.getHours(),
+            // Access the "getHours" method on the Date object with the dot accessor.
+            hours = time.getHours(),
 
-        // Access the "getMinutes" method with the dot accessor.
-        minutes = time.getMinutes(),
+            // Access the "getMinutes" method with the dot accessor.
+            minutes = time.getMinutes(),
 
 
-        seconds = time.getSeconds();
+            seconds = time.getSeconds();
 
-    document.querySelectorAll('.clock')[0].innerHTML = harold(hours) + ":" + harold(minutes) + ":" + harold(seconds);
+        document.querySelectorAll('.clock')[0].innerHTML = harold(hours) + ":" + harold(minutes) + ":" + harold(seconds);
 
-    function harold(standIn) {
-        if (standIn < 10) {
-            standIn = '0' + standIn
+        function harold(standIn) {
+            if (standIn < 10) {
+                standIn = '0' + standIn
+            }
+            return standIn;
         }
-        return standIn;
     }
-}
-setInterval(clock, 1000);
+    setInterval(clock, 1000);
 
-var d = new Date()
-var weekday = new Array(7);
-weekday[0] = "domingo";
-weekday[1] = "segunda-feira";
-weekday[2] = "terça-feira";
-weekday[3] = "quarta-feira";
-weekday[4] = "quinta-feira";
-weekday[5] = "sexta-feira"
-weekday[6] = "sábado";
+    var d = new Date()
+    var weekday = new Array(7);
+    weekday[0] = "domingo";
+    weekday[1] = "segunda-feira";
+    weekday[2] = "terça-feira";
+    weekday[3] = "quarta-feira";
+    weekday[4] = "quinta-feira";
+    weekday[5] = "sexta-feira"
+    weekday[6] = "sábado";
 
-var n = weekday[d.getDay()]
-var h = d.getHours();
-let r
+    n = weekday[d.getDay()]
+    var h = d.getHours();
+    let r
 
-if (6 <= h && h < 12) {
-    r = 'Bom dia'
-}
-if (12 <= h && h < 18) {
-    r = 'Boa tarde'
-}
-if (18 <= h && h < 24) {
-    r = 'Boa noite'
-}
-if (0 <= h && h < 6) {
-    r = 'Boa madrugada'
-}
+    if (6 <= h && h < 12) {
+        r = 'Bom dia'
+    }
+    if (12 <= h && h < 18) {
+        r = 'Boa tarde'
+    }
+    if (18 <= h && h < 24) {
+        r = 'Boa noite'
+    }
+    if (0 <= h && h < 6) {
+        r = 'Boa madrugada'
+    }
 
-const tit = document.querySelector('#ptit')
-tit.innerHTML = `${r}, hoje é ${n}!`
+    const tit = document.querySelector('#ptit')
+    tit.innerHTML = `${r}, hoje é ${n}!`
+})
 
 cf = (str) => {
     let dia = (i, num) => {
@@ -193,6 +199,9 @@ let semAula = (inp) => {
 }
 
 const img1 = document.querySelector('#img1')
+new Promise(resolve => {
+    img1.setAttribute('src', cf('aulas'))
+})
 
 const bAulas = document.getElementById('baulas')
 const bAulasEx = document.getElementById('baulasex')
@@ -216,66 +225,84 @@ bPlantoes.onclick = () => {
 const divTarefa = document.querySelector('#tarefas')
 
 renderTarefas = () => {
+    saveToStorage = (a) => {
+        localStorage.setItem('list_todos', JSON.stringify(a))
+    }
+
+    getStorage = () => {
+        return JSON.parse(localStorage.getItem('list_todos'))
+    }
     for (item in tarefas) {
-        isChecked.push(false)
         let p = document.createElement('div')
         let inputcheckbox = document.createElement('input')
         inputcheckbox.setAttribute('type', 'checkbox')
         inputcheckbox.setAttribute('class', 'classCheck')
+
+        if (localStorage.getItem('list_todos')) {
+            if (getStorage()[item] == true) {
+                inputcheckbox.checked = true
+            } else {
+                inputcheckbox.checked = false
+            }
+        } else {
+            isChecked.push(false)
+        }
+
         p.setAttribute('class', 'tarefa')
-        let text = document.createTextNode(tarefas[item])
+        let text = document.createTextNode(' ' + tarefas[item])
         p.appendChild(inputcheckbox)
         p.appendChild(text)
         divTarefa.appendChild(p)
 
-        inputcheckbox.addEventListener('change', function() {
+        inputcheckbox.addEventListener('change', function () {
             function getSelectedCheckboxValues(name) {
-                const checkboxes = document.querySelectorAll(`input[class=${name}]:checked`);
-                let values = [];
+                const checkboxes = document.querySelectorAll(`input[class=${name}]`);
+                let isChecked = [];
                 checkboxes.forEach((checkbox) => {
-                    values.push(checkbox.value);
+                    isChecked.push(checkbox.checked);
                 });
-                return values;
+                return isChecked;
             }
+            saveToStorage(getSelectedCheckboxValues('classCheck'))
             console.log(getSelectedCheckboxValues('classCheck'))
         })
-
-        saveToStorage()
     }
 }
 
 if (window.CSS && CSS.supports("color", "var(--primary)")) {
+    let checkColor = localStorage.getItem('color-mode');
+    let checkColorMode = () => {
+        if (checkColor == 'light') {
+            return
+        } else {
+            document.documentElement.setAttribute("color-mode", "dark");
+        }
+    }
+    checkColorMode()
     var toggleColorMode = function toggleColorMode(e) {
-      // Switch to Light Mode
-      if (e.currentTarget.classList.contains("light--hidden")) {
-        // Sets the custom html attribute
-        document.documentElement.setAttribute("color-mode", "light"); // Sets the user's preference in local storage
-  
-        localStorage.setItem("color-mode", "light");
-        return;
-      }
-      /* Switch to Dark Mode
-      Sets the custom html attribute */
-      document.documentElement.setAttribute("color-mode", "dark"); // Sets the user's preference in local storage
-  
-      localStorage.setItem("color-mode", "dark");
+        // Switch to Light Mode
+        if (e.currentTarget.classList.contains("light--hidden")) {
+            // Sets the custom html attribute
+            document.documentElement.setAttribute("color-mode", "light"); // Sets the user's preference in local storage
+
+            localStorage.setItem("color-mode", "light");
+            return;
+        }
+        /* Switch to Dark Mode
+        Sets the custom html attribute */
+        document.documentElement.setAttribute("color-mode", "dark"); // Sets the user's preference in local storage
+
+        localStorage.setItem("color-mode", "dark");
     }; // Get the buttons in the DOM
-  
     var toggleColorButtons = document.querySelectorAll(".color-mode__btn"); // Set up event listeners
-  
-    toggleColorButtons.forEach(function(btn) {
-      btn.addEventListener("click", toggleColorMode);
+
+    toggleColorButtons.forEach(function (btn) {
+        btn.addEventListener("click", toggleColorMode);
     });
-  } else {
+} else {
     // If the feature isn't supported, then we hide the toggle buttons
     var btnContainer = document.querySelector(".color-mode__header");
     btnContainer.style.display = "none";
-  }
-
-saveToStorage = () => {
-    localStorage.setItem('list_todos', JSON.stringify(isChecked))
 }
 
 renderTarefas()
-img1.setAttribute('src', cf('aulas'))
-
