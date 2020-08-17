@@ -1,11 +1,11 @@
 let tarefas = [
-    'Tarefa Vladmir - HIST. (Ap. 5 - M. 14 - Pág. 250) (261, 265, 266, 267, 268, 270, 275, 276, 278, 279)',
-    'Tarefa João César (Ap. 6 - M. 32) (621, 622, 625, 627, 629, 635)',
-    'Tarefa Guilherme (Ap. 6 - M. 31 - Pág. 33) (601, 603, 608, 609, 612, 613, 614, 616, 619)',
-    'Tarefa Guilherme (Ap. 6 - M. 32 - Pág. 38) (621, 623, 626, 628, 629, 631, 633, 636)',
-    'Tarefa Rodrigo (Ap. 6 - M. 33 - Pág. 232) (641, 642, 645, 648, 650, 653, 658, 659)',
-    'Tarefa LeoGeo (Ap. 6 - M. 36 - Pág. 179) (701, 703, 705, 711, 713, 715, 710, 713)',
-    'Tarefa Marcus Vinícius (Ap. 6 - M. 33 - Pág. 172) (641, 643, 645, 646, 648)',
+    ['Tarefa Vladmir - FILO.', '(Ap. 5 - M. 14 - Pág. 250)', '(261, 265, 266, 267, 268, 270, 275, 276, 278, 279)'],
+    ['Tarefa João César', '(Ap. 6 - M. 32)', '(621, 622, 625, 627, 629, 635)'],
+    ['Tarefa Guilherme', '(Ap. 6 - M. 31 - Pág. 33)', '(601, 603, 608, 609, 612, 613, 614, 616, 619)'],
+    ['Tarefa Guilherme', '(Ap. 6 - M. 32 - Pág. 38)', '(621, 623, 626, 628, 629, 631, 633, 636)'],
+    ['Tarefa Rodrigo', '(Ap. 6 - M. 33 - Pág. 232)', '(641, 642, 645, 648, 650, 653, 658, 659)'],
+    ['Tarefa LeoGeo', '(Ap. 6 - M. 36 - Pág. 179)', '(701, 703, 705, 711, 713, 715, 710, 713)'],
+    ['Tarefa Marcus Vinícius', '(Ap. 6 - M. 33 - Pág. 172)', '(641, 643, 645, 646, 648)'],
 ];
 
 let isChecked = []
@@ -232,9 +232,57 @@ renderTarefas = () => {
     getStorage = () => {
         return JSON.parse(localStorage.getItem('list_todos'))
     }
+
+    caretButton = (element, item, button) => {
+        let isShown = false
+        let lista = tarefas[item].slice(1)
+        if (!tarefas[item][1]) return
+        let icon = button.querySelector('i')
+
+        for (i in tarefas) {
+            var newGroupDiv = document.createElement('div')
+            for (o in lista) {
+                let newDiv = document.createElement('div')
+                let newText = document.createTextNode(' ↳ ' + lista[o])
+                newDiv.setAttribute('class', 'subTarefas')
+                newDiv.appendChild(newText)
+                newGroupDiv.appendChild(newDiv)
+            }
+            element.appendChild(newGroupDiv)
+            newGroupDiv.setAttribute('style', 'display: none;')
+            button.setAttribute('class' ,'btn_normal')
+            icon.setAttribute('class' ,'fa fa-caret-down fa-rotate-270')
+        }
+
+        button.addEventListener('click', function () {
+            if (isShown == false) {
+                newGroupDiv.setAttribute('style', 'display: block;')
+                setTimeout(() => {
+                    
+                    icon.setAttribute('class', 'fa fa-caret-down' )
+                } ,500)
+                button.setAttribute('class' ,'btn_pressed')
+            }
+            if (isShown == true) {
+                newGroupDiv.setAttribute('style', 'display: none;')
+                setTimeout(() => {
+                    
+                    icon.setAttribute('class' ,'fa fa-caret-down fa-rotate-270')
+                } ,500)
+                button.setAttribute('class' ,'btn_unpressed')
+            }
+            isShown ^= true
+        })
+    }
+
+
+
     for (item in tarefas) {
         let p = document.createElement('div')
         let inputcheckbox = document.createElement('input')
+        let caretButtonElement = document.createElement('button')
+        let caretButtonIcon = document.createElement('i')
+        caretButtonIcon.setAttribute('class', 'fa fa-caret-down')
         inputcheckbox.setAttribute('type', 'checkbox')
         inputcheckbox.setAttribute('class', 'classCheck')
 
@@ -249,9 +297,12 @@ renderTarefas = () => {
         }
 
         p.setAttribute('class', 'tarefa')
-        let text = document.createTextNode(' ' + tarefas[item])
+        let text = document.createTextNode(' ' + tarefas[item][0] + ' ')
+        caretButtonElement.appendChild(caretButtonIcon)
         p.appendChild(inputcheckbox)
+        p.appendChild(caretButtonElement)
         p.appendChild(text)
+        caretButton(p, item, caretButtonElement)
         divTarefa.appendChild(p)
 
         inputcheckbox.addEventListener('change', function () {

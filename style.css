@@ -72,6 +72,7 @@ body {
 #tarefas {
     font: normal 26px Dosis;
     justify-content: space-around;
+    margin-left: 20px;
 }
 
 section {
@@ -214,7 +215,60 @@ width: 50px;
 .btn-group {
     text-align: center;
 }
- 
+
+.btn_normal {
+    color: var(--element1);
+    background-color: var(--surface3);
+    padding: 0;
+    border: none;
+    background: none;
+    width: 18px;
+    height: 21px;
+    margin-left: 5px;
+    margin-right: none;
+}
+
+.btn_pressed {
+    color: var(--element3);
+    background-color: var(--surface3);
+    padding: 0;
+    border: none;
+    background: none;
+    width: 18px;
+    height: 21px;
+    -webkit-animation:unspin 0.5s linear;
+    -moz-animation:unspin 0.5s linear;
+    animation:unspin 0.5s linear;
+    margin-left: 5px;
+    margin-right: none;
+}
+
+.btn_unpressed {
+    color: var(--element1);
+    background-color: var(--surface3);
+    padding: 0;
+    border: none;
+    background: none;
+    width: 18px;
+    height: 21px;
+    -webkit-animation:spin 0.5s linear;
+    -moz-animation:spin 0.5s linear;
+    animation:spin 0.5s linear;
+    margin-left: 5px;
+    margin-right: none;
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(-90deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(-90deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(-90deg); transform:rotate(-90deg); } }
+
+@-moz-keyframes unspin { 100% { -moz-transform: rotate(90deg); } }
+@-webkit-keyframes unspin { 100% { -webkit-transform: rotate(90deg); } }
+@keyframes unspin { 100% { -webkit-transform: rotate(90deg); transform:rotate(90deg); } }
+
+.subTarefas {
+    text-indent: 1.5em;
+}
 
   @media screen and (max-width:550px) {
     .color-mode__btn {
