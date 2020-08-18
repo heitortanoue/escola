@@ -243,8 +243,13 @@ renderTarefas = () => {
             var newGroupDiv = document.createElement('div')
             for (o in lista) {
                 let newDiv = document.createElement('div')
-                let newText = document.createTextNode(' ↳ ' + lista[o])
+                let arrowSpan = document.createElement('span')
+                let newText = document.createTextNode(lista[o])
+                let newArrow = document.createTextNode(' ↳ ')
+                arrowSpan.setAttribute('class', 'arrow')
                 newDiv.setAttribute('class', 'subTarefas')
+                arrowSpan.appendChild(newArrow)
+                newDiv.appendChild(arrowSpan)
                 newDiv.appendChild(newText)
                 newGroupDiv.appendChild(newDiv)
             }
@@ -258,7 +263,6 @@ renderTarefas = () => {
             if (isShown == false) {
                 newGroupDiv.setAttribute('style', 'display: block;')
                 setTimeout(() => {
-                    
                     icon.setAttribute('class', 'fa fa-caret-down' )
                 } ,500)
                 button.setAttribute('class' ,'btn_pressed')
@@ -266,7 +270,6 @@ renderTarefas = () => {
             if (isShown == true) {
                 newGroupDiv.setAttribute('style', 'display: none;')
                 setTimeout(() => {
-                    
                     icon.setAttribute('class' ,'fa fa-caret-down fa-rotate-270')
                 } ,500)
                 button.setAttribute('class' ,'btn_unpressed')
@@ -279,6 +282,7 @@ renderTarefas = () => {
 
     for (item in tarefas) {
         let p = document.createElement('div')
+        let titleDiv = document.createElement('span')
         let inputcheckbox = document.createElement('input')
         let caretButtonElement = document.createElement('button')
         let caretButtonIcon = document.createElement('i')
@@ -297,11 +301,12 @@ renderTarefas = () => {
         }
 
         p.setAttribute('class', 'tarefa')
-        let text = document.createTextNode(' ' + tarefas[item][0] + ' ')
+        titleDiv.insertAdjacentHTML('beforeend', `${tarefas[item][0]}`)
+        titleDiv.setAttribute('class', 'titleDiv')
         caretButtonElement.appendChild(caretButtonIcon)
         p.appendChild(inputcheckbox)
         p.appendChild(caretButtonElement)
-        p.appendChild(text)
+        p.appendChild(titleDiv)
         caretButton(p, item, caretButtonElement)
         divTarefa.appendChild(p)
 

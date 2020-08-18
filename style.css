@@ -70,9 +70,11 @@ body {
 }
 
 #tarefas {
-    font: normal 26px Dosis;
+    font: bold 26px 'Dosis';
+    display: inline-block;
     justify-content: space-around;
     margin-left: 20px;
+    text-align: left;
 }
 
 section {
@@ -212,6 +214,10 @@ h2 {
 width: 50px;
 }
 
+.titleDiv {
+    font-weight: bold;
+}
+
 .btn-group {
     text-align: center;
 }
@@ -268,6 +274,14 @@ width: 50px;
 
 .subTarefas {
     text-indent: 1.5em;
+    font: normal 24px 'Sarabun'
+}
+
+.arrow {
+    color: var(--primary);
+    font-size: 28px;
+    font-weight: bold;
+    text-shadow: 2px 2px 1px var(--surface1, #eeeeee);
 }
 
   @media screen and (max-width:550px) {
