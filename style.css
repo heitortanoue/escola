@@ -143,6 +143,11 @@ input[type='button']:active, .color-mode__btn {
     border-width: thin;
 }
 
+hr {
+    border-top: 3px dotted var(--element3);
+    border-bottom: none;
+  }
+
 #inputTarefaButton{
     height: 30px;
     font: bolder 13pt Dosis;
@@ -287,6 +292,14 @@ width: 50px;
     user-select: none;
 }
 
+.tag {
+    font: normal 16px Varela;
+    padding: 2px;
+    color: white;
+    display: inline-block;
+    margin-left: 15px;
+}
+
 @-moz-keyframes spin { 100% { -moz-transform: rotate(-90deg); } }
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(-90deg); } }
 @keyframes spin { 100% { -webkit-transform: rotate(-90deg); transform:rotate(-90deg); } }
@@ -322,6 +335,12 @@ width: 50px;
         width: 30px;
         height: 3%;
         font: normal 16px Arial;
+    }
+
+    .tag {
+        font: normal 8px Varela;
+        display: inline-block;
+        margin-left: 8px;
     }
   
     #btn {

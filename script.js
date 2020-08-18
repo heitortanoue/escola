@@ -1,15 +1,29 @@
+const materias = {
+    mat: ['Matemática &#128290', 'steelblue'],
+    fis: ['Física &#128640', 'rebeccapurple'],
+    qui: ['Química &#129514', 'darkmagenta'],
+    bio: ['Biologia &#129516', 'seagreen'],
+    his: ['História &#128220', 'goldenrod'],
+    geo: ['Geografia &#127758', 'tomato'],
+    lit: ['Literatura &#128218', 'deeppink'],
+    red: ['Redação &#9997', 'sienna'],
+    gra: ['Gramática &#128292', 'darkcyan'],
+    fil: ['Filosofia &#x1F9E0', 'lightseagreen'],
+    soc: ['Sociologia &#128105', 'firebrick'],
+}
+
 let tarefas = [
-    ['Tarefa Ditomaso', '(Ap. 5 - M. 15 - Pág. 333)', '(281, 283, 290, 291, 297)'],
-    ['Tarefa João César', '(Ap. 6 - M. 31 - Pág. 20)', '(621, 622, 625, 627, 629, 635)'],
-    ['Tarefa Guilherme - 1', '(Ap. 6 - M. 31 - Pág. 33)', '(601, 603, 608, 609, 612, 613, 614, 616, 619)'],
-    ['Tarefa Guilherme - 2', '(Ap. 6 - M. 32 - Pág. 38)', '(621, 623, 626, 628, 629, 631, 633, 636)'],
-    //['Tarefa Rodrigo', '(Ap. 6 - M. 33 - Pág. 232)', '(641, 642, 645, 648, 650, 653, 658, 659)'],
-    ['Tarefa Thiago', '(Ap. 6 - M. 16 - Pág. 104)', '(301, 304, 308, 309, 313, 319, 310)'],
-    ['Tarefa Rose - 1', '(Ap. 6 - M. 33 - Pág. 137)', '(643, 644, 647, 649, 652, 659)'],
-    ['Tarefa Rose - 2', '(Ap. 6 - M. 34 - Pág. 146)', '(661, 663, 666, 676, 679)'],
+    [ 'Tarefa Ditomaso' , 'bio' , '(Ap. 5 - M. 15 - Pág. 333)' , '(281, 283, 290, 291, 297)' ],
+    [ 'Tarefa João César' , 'fis' ,'(Ap. 6 - M. 31 - Pág. 20)' , '(621, 622, 625, 627, 629, 635)' ],
+    [ 'Tarefa Guilherme - 1' , 'his' , '(Ap. 6 - M. 31 - Pág. 33)' , '(601, 603, 608, 609, 612, 613, 614, 616, 619)' ],
+    [ 'Tarefa Guilherme - 2' , 'his' , '(Ap. 6 - M. 32 - Pág. 38)' , '(621, 623, 626, 628, 629, 631, 633, 636)' ],
+    //['Tarefa Rodrigo', '(Ap. 6 - M. 33 - Pág. 232)', '(641, 642, 645, 648, 650, 653, 658, 659)' ],
+    [ 'Tarefa Thiago' , 'fis' , '(Ap. 6 - M. 16 - Pág. 104)' , '(301, 304, 308, 309, 313, 319, 310)' ],
+    [ 'Tarefa Rose - 1' , 'qui' , '(Ap. 6 - M. 33 - Pág. 137)' , '(643, 644, 647, 649, 652, 659)' ],
+    [ 'Tarefa Rose - 2' , 'qui' , '(Ap. 6 - M. 34 - Pág. 146)' , '(661, 663, 666, 676, 679)' ],
 ];
 
-let tarefasUsuario = []
+let tarefasUsuario = ['a']
 
 let isChecked = []
 
@@ -238,11 +252,7 @@ const divTarefa = document.querySelector('#tarefas')
 }*/
 
 renderTarefas = () => {
-    checkboxListener = () => {
-        inputcheckbox.addEventListener('change', function() {
-            inputcheckbox.checked == true ? p.setAttribute('class', 'tarefa_done') : p.setAttribute('class', 'tarefa_undone')
-        })
-    }
+
 
     saveToStorage = (a) => {
         localStorage.setItem('list_todos', JSON.stringify(a))
@@ -254,8 +264,8 @@ renderTarefas = () => {
 
     caretButton = (element, item, button) => {
         let isShown = false
-        let lista = tarefas[item].slice(1)
-        if (!tarefas[item][1]) {
+        let lista = tarefas[item].slice(2)
+        if (!tarefas[item][2]) {
             button.setAttribute('style', 'display:none;')
             return}
         let icon = button.querySelector('i')
@@ -299,23 +309,18 @@ renderTarefas = () => {
         })
     }
 
-    function union_arrays (x, y) {
-        var obj = {};
-        for (var i = x.length-1; i >= 0; -- i)
-           obj[x[i]] = x[i];
-        for (var i = y.length-1; i >= 0; -- i)
-           obj[y[i]] = y[i];
-        var res = []
-        for (var k in obj) {
-          if (obj.hasOwnProperty(k))  // <-- optional
-            res.push(obj[k]);
-        }
-        return res;
-      }
-
-      const tarefasUniao = union_arrays(tarefas, tarefasUsuario)
+    createSubjectTag = (element, m) => {
+        if(!m) {return}
+        if(!materias[`${m}`]) {return}
+        let newTag = document.createElement('span')
+        newTag.insertAdjacentHTML('beforeend', ` ${materias[`${m}`][0]}`)
+        newTag.setAttribute('class', 'tag')
+        newTag.setAttribute('style', `background-color: ${materias[`${m}`][1]}`)
+        element.appendChild(newTag)
+    }
 
     renderTarefasEscola = () => {for (item in tarefas) {
+        const materiaAtual = tarefas[item][1]
         let p = document.createElement('div')
         let titleDiv = document.createElement('label')
         let inputcheckbox = document.createElement('input')
@@ -326,28 +331,28 @@ renderTarefas = () => {
         inputcheckbox.setAttribute('class', 'classCheck')
         titleDiv.setAttribute('for', `id${item}`)
         caretButtonElement.setAttribute('id', `id${item}`)
-        p.setAttribute('class', 'tarefa_undone')
+        titleDiv.setAttribute('class', 'tarefa_undone')
 
         if (localStorage.getItem('list_todos')) {
             if (getStorage()[item] == true) {
                 inputcheckbox.checked = true
-                p.setAttribute('class', 'tarefa_done')
+                titleDiv.setAttribute('class', 'tarefa_done')
                 inputcheckbox.addEventListener('change', function() {
-                    inputcheckbox.checked == true ? p.setAttribute('class', 'tarefa_done') : p.setAttribute('class', 'tarefa_undone')
+                    inputcheckbox.checked == true ? titleDiv.setAttribute('class', 'tarefa_done') : titleDiv.setAttribute('class', 'tarefa_undone')
                 })
 
             } else {
                 inputcheckbox.checked = false
-                p.setAttribute('class', 'tarefa_undone')
+                titleDiv.setAttribute('class', 'tarefa_undone')
                 inputcheckbox.addEventListener('change', function() {
-                    inputcheckbox.checked == true ? p.setAttribute('class', 'tarefa_done') : p.setAttribute('class', 'tarefa_undone')
+                    inputcheckbox.checked == true ? titleDiv.setAttribute('class', 'tarefa_done') : titleDiv.setAttribute('class', 'tarefa_undone')
                 })
             }
         } else {
             isChecked.push(false)
-            p.setAttribute('class', 'tarefa_undone')
+            titleDiv.setAttribute('class', 'tarefa_undone')
             inputcheckbox.addEventListener('change', function() {
-                inputcheckbox.checked == true ? p.setAttribute('class', 'tarefa_done') : p.setAttribute('class', 'tarefa_undone')
+                inputcheckbox.checked == true ? titleDiv.setAttribute('class', 'tarefa_done') : titleDiv.setAttribute('class', 'tarefa_undone')
             })
         }
 
@@ -364,11 +369,12 @@ renderTarefas = () => {
         })
 
         titleDiv.insertAdjacentHTML('beforeend', `${tarefas[item][0]}`)
-        titleDiv.setAttribute('class', 'titleDiv')
+        //titleDiv.setAttribute('class', 'titleDiv')
         caretButtonElement.appendChild(caretButtonIcon)
         p.appendChild(inputcheckbox)
         p.appendChild(caretButtonElement)
         p.appendChild(titleDiv)
+        createSubjectTag(p, `${materiaAtual}`)
         caretButton(p, item, caretButtonElement)
         divTarefa.appendChild(p)
     }} 
