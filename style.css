@@ -9,8 +9,8 @@
     --surface2: #DADDE7;
     --surface3: #F3F4F7;
     --element1: #111111;
-    --element2: #222222;
-    --element3: #333333;
+    --element2: #333333;
+    --element3: #555555;
     --elementInverse: #eee;
     --primary: #F45265;
     --secondary: #ECCA5B;
@@ -43,11 +43,6 @@
 :root[color-mode='light'] .light--hidden {
     display: none;
 }
-
-@keyframes example {
-    from {background-color: red;}
-    to {background-color: yellow;}
-  }
 
 @viewport {
     width: device-width ;
@@ -148,9 +143,20 @@ input[type='button']:active, .color-mode__btn {
     border-width: thin;
 }
 
-input[type='checkbox'] {
-    width: 20px;
-    height: 20px;
+#inputTarefaButton{
+    height: 30px;
+    font: bolder 13pt Dosis;
+}
+
+#inputTarefa {
+    height: 27px;
+    color: var(--element1);
+    background-color: var(--surface2);
+    border: none;
+}
+
+.inputTarefaDiv {
+    text-align: center;
 }
 
 .col {
@@ -210,6 +216,11 @@ h2 {
       text-align: center;
   }
 
+  input[type='checkbox'] {
+      width: 20px;
+      height: 20px;
+  }
+
 .color-mode__btn {
 width: 50px;
 }
@@ -232,6 +243,10 @@ width: 50px;
     height: 21px;
     margin-left: 5px;
     margin-right: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .btn_pressed {
@@ -247,6 +262,10 @@ width: 50px;
     animation:unspin 0.5s linear;
     margin-left: 5px;
     margin-right: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .btn_unpressed {
@@ -262,6 +281,10 @@ width: 50px;
     animation:spin 0.5s linear;
     margin-left: 5px;
     margin-right: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 @-moz-keyframes spin { 100% { -moz-transform: rotate(-90deg); } }
@@ -282,6 +305,16 @@ width: 50px;
     font-size: 28px;
     font-weight: bold;
     text-shadow: 2px 2px 1px var(--surface1, #eeeeee);
+}
+
+.tarefa_done {
+    color: var(--element3);
+    text-decoration: line-through;
+}
+
+.tarefa_undone {
+    color: var(--element1);
+    text-decoration: none;
 }
 
   @media screen and (max-width:550px) {
@@ -373,6 +406,7 @@ width: 50px;
         font: normal 13px Pacifico;
         text-align: center;
         padding: 2%;
+        text-shadow: 1px 1px 1px var(--element1, #eeeeee);
     }
 
     div {
@@ -385,6 +419,18 @@ width: 50px;
 
     body {
         font: normal 13px Dosis;
+    }
+
+    .subTarefas {
+        text-indent: 1em;
+        font: normal 13px 'Sarabun'
+    }
+    
+    .arrow {
+        color: var(--primary);
+        font-size: 15px;
+        font-weight: bold;
+        text-shadow: 1px 1px 1px var(--surface1, #eeeeee);
     }
   }
 

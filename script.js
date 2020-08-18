@@ -1,17 +1,20 @@
 let tarefas = [
-    ['Tarefa Vladmir - FILO.', '(Ap. 5 - M. 14 - Pág. 250)', '(261, 265, 266, 267, 268, 270, 275, 276, 278, 279)'],
-    ['Tarefa João César', '(Ap. 6 - M. 32)', '(621, 622, 625, 627, 629, 635)'],
-    ['Tarefa Guilherme', '(Ap. 6 - M. 31 - Pág. 33)', '(601, 603, 608, 609, 612, 613, 614, 616, 619)'],
-    ['Tarefa Guilherme', '(Ap. 6 - M. 32 - Pág. 38)', '(621, 623, 626, 628, 629, 631, 633, 636)'],
-    ['Tarefa Rodrigo', '(Ap. 6 - M. 33 - Pág. 232)', '(641, 642, 645, 648, 650, 653, 658, 659)'],
-    ['Tarefa LeoGeo', '(Ap. 6 - M. 36 - Pág. 179)', '(701, 703, 705, 711, 713, 715, 710, 713)'],
-    ['Tarefa Marcus Vinícius', '(Ap. 6 - M. 33 - Pág. 172)', '(641, 643, 645, 646, 648)'],
+    ['Tarefa Ditomaso', '(Ap. 5 - M. 15 - Pág. 333)', '(281, 283, 290, 291, 297)'],
+    ['Tarefa João César', '(Ap. 6 - M. 32 - Pág. 23)', '(646, 650, 652, 655, 657, 658)'],
+    ['Tarefa Guilherme - 1', '(Ap. 6 - M. 31 - Pág. 33)', '(601, 603, 608, 609, 612, 613, 614, 616, 619)'],
+    ['Tarefa Guilherme - 2', '(Ap. 6 - M. 32 - Pág. 38)', '(621, 623, 626, 628, 629, 631, 633, 636)'],
+    //['Tarefa Rodrigo', '(Ap. 6 - M. 33 - Pág. 232)', '(641, 642, 645, 648, 650, 653, 658, 659)'],
+    ['Tarefa Thiago', '(Ap. 6 - M. 16 - Pág. 104)', '(301, 304, 308, 309, 313, 319, 310)'],
+    ['Tarefa Rose - 1', '(Ap. 6 - M. 33 - Pág. 137)', '(643, 644, 647, 649, 652, 659)'],
+    ['Tarefa Rose - 2', '(Ap. 6 - M. 34 - Pág. 146)', '(661, 663, 666, 676, 679)'],
 ];
+
+let tarefasUsuario = []
 
 let isChecked = []
 
 const dim = {
-    aulas: [190, 155],
+    aulas: [190, 156],
     plantoes: [287, 123],
     aulasex: [251, 122]
 }
@@ -222,9 +225,25 @@ bPlantoes.onclick = () => {
     //semAula('plantoes')
 }
 
+const inputText = document.querySelector('#inputTarefa')
+const inputButton = document.querySelector('#inputTarefaButton')
 const divTarefa = document.querySelector('#tarefas')
 
+/*inputButton.onclick = () => {
+    tarefasUsuario.push(inputText.value)
+    inputText.value = ''
+    console.log(tarefasUsuario)
+    divTarefa.innerHTML = ''
+    renderTarefas()
+}*/
+
 renderTarefas = () => {
+    checkboxListener = () => {
+        inputcheckbox.addEventListener('change', function() {
+            inputcheckbox.checked == true ? p.setAttribute('class', 'tarefa_done') : p.setAttribute('class', 'tarefa_undone')
+        })
+    }
+
     saveToStorage = (a) => {
         localStorage.setItem('list_todos', JSON.stringify(a))
     }
@@ -236,7 +255,9 @@ renderTarefas = () => {
     caretButton = (element, item, button) => {
         let isShown = false
         let lista = tarefas[item].slice(1)
-        if (!tarefas[item][1]) return
+        if (!tarefas[item][1]) {
+            button.setAttribute('style', 'display:none;')
+            return}
         let icon = button.querySelector('i')
 
         for (i in tarefas) {
@@ -278,37 +299,57 @@ renderTarefas = () => {
         })
     }
 
+    function union_arrays (x, y) {
+        var obj = {};
+        for (var i = x.length-1; i >= 0; -- i)
+           obj[x[i]] = x[i];
+        for (var i = y.length-1; i >= 0; -- i)
+           obj[y[i]] = y[i];
+        var res = []
+        for (var k in obj) {
+          if (obj.hasOwnProperty(k))  // <-- optional
+            res.push(obj[k]);
+        }
+        return res;
+      }
 
+      const tarefasUniao = union_arrays(tarefas, tarefasUsuario)
 
-    for (item in tarefas) {
+    renderTarefasEscola = () => {for (item in tarefas) {
         let p = document.createElement('div')
-        let titleDiv = document.createElement('span')
+        let titleDiv = document.createElement('label')
         let inputcheckbox = document.createElement('input')
         let caretButtonElement = document.createElement('button')
         let caretButtonIcon = document.createElement('i')
         caretButtonIcon.setAttribute('class', 'fa fa-caret-down')
         inputcheckbox.setAttribute('type', 'checkbox')
         inputcheckbox.setAttribute('class', 'classCheck')
+        titleDiv.setAttribute('for', `id${item}`)
+        caretButtonElement.setAttribute('id', `id${item}`)
+        p.setAttribute('class', 'tarefa_undone')
 
         if (localStorage.getItem('list_todos')) {
             if (getStorage()[item] == true) {
                 inputcheckbox.checked = true
+                p.setAttribute('class', 'tarefa_done')
+                inputcheckbox.addEventListener('change', function() {
+                    inputcheckbox.checked == true ? p.setAttribute('class', 'tarefa_done') : p.setAttribute('class', 'tarefa_undone')
+                })
+
             } else {
                 inputcheckbox.checked = false
+                p.setAttribute('class', 'tarefa_undone')
+                inputcheckbox.addEventListener('change', function() {
+                    inputcheckbox.checked == true ? p.setAttribute('class', 'tarefa_done') : p.setAttribute('class', 'tarefa_undone')
+                })
             }
         } else {
             isChecked.push(false)
+            p.setAttribute('class', 'tarefa_undone')
+            inputcheckbox.addEventListener('change', function() {
+                inputcheckbox.checked == true ? p.setAttribute('class', 'tarefa_done') : p.setAttribute('class', 'tarefa_undone')
+            })
         }
-
-        p.setAttribute('class', 'tarefa')
-        titleDiv.insertAdjacentHTML('beforeend', `${tarefas[item][0]}`)
-        titleDiv.setAttribute('class', 'titleDiv')
-        caretButtonElement.appendChild(caretButtonIcon)
-        p.appendChild(inputcheckbox)
-        p.appendChild(caretButtonElement)
-        p.appendChild(titleDiv)
-        caretButton(p, item, caretButtonElement)
-        divTarefa.appendChild(p)
 
         inputcheckbox.addEventListener('change', function () {
             function getSelectedCheckboxValues(name) {
@@ -320,9 +361,18 @@ renderTarefas = () => {
                 return isChecked;
             }
             saveToStorage(getSelectedCheckboxValues('classCheck'))
-            console.log(getSelectedCheckboxValues('classCheck'))
         })
-    }
+
+        titleDiv.insertAdjacentHTML('beforeend', `${tarefas[item][0]}`)
+        titleDiv.setAttribute('class', 'titleDiv')
+        caretButtonElement.appendChild(caretButtonIcon)
+        p.appendChild(inputcheckbox)
+        p.appendChild(caretButtonElement)
+        p.appendChild(titleDiv)
+        caretButton(p, item, caretButtonElement)
+        divTarefa.appendChild(p)
+    }} 
+    renderTarefasEscola()
 }
 
 if (window.CSS && CSS.supports("color", "var(--primary)")) {
