@@ -1,3 +1,12 @@
+let tarefas = [
+    [ 'Tarefa Rafa' , 'mat' , '(Ap. 5 - M. 30 - Pág. 88)' , '(581, 682, 583, 584, 586, 591, 589, 590)' ],
+    [ 'Tarefa Vini' , 'mat' ,'(Ap. 7 - M. 19 - Pág. 92)' , '(363, 366, 367, 376, 377, 380)' , '<u>Desafios:</u> (363, 366, 367, 376, 377, 380)' ],
+    [ 'Tarefa LeoGeo' , 'geo' , '(Ap. 6 - M. 36 - Pág. 179)' , '(701, 703, 705, 711, 715, 710, 713)' ],
+    [ 'Tarefa Murilo' , 'gra' , '(Ap. 6 - M. 35 - Pág. 153)' , '(686, 687, 689, 699)' ],
+    [ 'Tarefa Zanin' , 'geo' , '(Ap. 6 - M. 17 - Pág. 214)' , '(322, 325, 326, 328, 330)' ],
+    [ 'Tarefa Tio Dani' , 'bio' , '(Ap. 6 - M. 31 - Pág. 265)' , '(603, 608, 610, 615, 616, 617)' ],
+];
+
 const materias = {
     mat: ['Matemática &#128290', 'steelblue'],
     fis: ['Física &#128640', 'rebeccapurple'],
@@ -12,18 +21,7 @@ const materias = {
     soc: ['Sociologia &#128105', 'firebrick'],
 }
 
-let tarefas = [
-    [ 'Tarefa Ditomaso' , 'bio' , '(Ap. 5 - M. 15 - Pág. 333)' , '(281, 283, 290, 291, 297)' ],
-    [ 'Tarefa João César' , 'fis' ,'(Ap. 6 - M. 31 - Pág. 20)' , '(621, 622, 625, 627, 629, 635)' ],
-    [ 'Tarefa Guilherme - 1' , 'his' , '(Ap. 6 - M. 31 - Pág. 33)' , '(601, 603, 608, 609, 612, 613, 614, 616, 619)' ],
-    [ 'Tarefa Guilherme - 2' , 'his' , '(Ap. 6 - M. 32 - Pág. 38)' , '(621, 623, 626, 628, 629, 631, 633, 636)' ],
-    //['Tarefa Rodrigo', '(Ap. 6 - M. 33 - Pág. 232)', '(641, 642, 645, 648, 650, 653, 658, 659)' ],
-    [ 'Tarefa Thiago' , 'fis' , '(Ap. 6 - M. 16 - Pág. 104)' , '(301, 304, 308, 309, 313, 319, 310)' ],
-    [ 'Tarefa Rose - 1' , 'qui' , '(Ap. 6 - M. 33 - Pág. 137)' , '(643, 644, 647, 649, 652, 659)' ],
-    [ 'Tarefa Rose - 2' , 'qui' , '(Ap. 6 - M. 34 - Pág. 146)' , '(661, 663, 666, 676, 679)' ],
-];
-
-let tarefasUsuario = ['a']
+let tarefasUsuario = []
 
 let isChecked = []
 
@@ -60,19 +58,15 @@ const coordsHorario = [
 ]
 
 new Promise(function (resolve, reject) {
-    function clock() { // We create a new Date object and assign it to a variable called "time".
+    function clock() {
         var time = new Date(),
-
-            // Access the "getHours" method on the Date object with the dot accessor.
+            days = time.getDate()
+            months = time.getMonth() + 1
             hours = time.getHours(),
-
-            // Access the "getMinutes" method with the dot accessor.
             minutes = time.getMinutes(),
-
-
             seconds = time.getSeconds();
 
-        document.querySelectorAll('.clock')[0].innerHTML = harold(hours) + ":" + harold(minutes) + ":" + harold(seconds);
+        document.querySelectorAll('.clock')[0].innerHTML = `${harold(days)}/${harold(months)} ` + harold(hours) + ":" + harold(minutes) + ":" + harold(seconds);
 
         function harold(standIn) {
             if (standIn < 10) {
@@ -275,13 +269,12 @@ renderTarefas = () => {
             for (o in lista) {
                 let newDiv = document.createElement('div')
                 let arrowSpan = document.createElement('span')
-                let newText = document.createTextNode(lista[o])
                 let newArrow = document.createTextNode(' ↳ ')
                 arrowSpan.setAttribute('class', 'arrow')
                 newDiv.setAttribute('class', 'subTarefas')
                 arrowSpan.appendChild(newArrow)
                 newDiv.appendChild(arrowSpan)
-                newDiv.appendChild(newText)
+                newDiv.insertAdjacentHTML('beforeend', `${lista[o]}`)
                 newGroupDiv.appendChild(newDiv)
             }
             element.appendChild(newGroupDiv)
@@ -323,15 +316,20 @@ renderTarefas = () => {
         const materiaAtual = tarefas[item][1]
         let p = document.createElement('div')
         let titleDiv = document.createElement('label')
+        let label = document.createElement('label')
         let inputcheckbox = document.createElement('input')
         let caretButtonElement = document.createElement('button')
         let caretButtonIcon = document.createElement('i')
         caretButtonIcon.setAttribute('class', 'fa fa-caret-down')
         inputcheckbox.setAttribute('type', 'checkbox')
         inputcheckbox.setAttribute('class', 'classCheck')
+        inputcheckbox.setAttribute('id', `idc${item}`)
+        label.setAttribute('for', `idc${item}`)
+        label.setAttribute('class', `label`)
         titleDiv.setAttribute('for', `id${item}`)
         caretButtonElement.setAttribute('id', `id${item}`)
         titleDiv.setAttribute('class', 'tarefa_undone')
+        p.setAttribute('class', 'tarefaDiv')
 
         if (localStorage.getItem('list_todos')) {
             if (getStorage()[item] == true) {
@@ -372,6 +370,7 @@ renderTarefas = () => {
         //titleDiv.setAttribute('class', 'titleDiv')
         caretButtonElement.appendChild(caretButtonIcon)
         p.appendChild(inputcheckbox)
+        p.appendChild(label)
         p.appendChild(caretButtonElement)
         p.appendChild(titleDiv)
         createSubjectTag(p, `${materiaAtual}`)
