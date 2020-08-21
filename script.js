@@ -1,11 +1,13 @@
 let tarefas = [
-    ['Tarefa Tio Dani', 'bio', '(Ap. 6 - M. 32 - Pág. 269)', '(621, 626, 632, 633, 639)'],
-    ['Tarefa Renan', 'mat', '(Ap. 6 - M. 32 - Pág. 22)', '(622, 624, 631, 634, 635)', '<u>Desafios:</u> (629 e 630)'],
-    ['Tarefa Lucas', 'fis', '(Ap. 6 - M. 31 - Pág. 49)', '(601, 604, 607, 609, 610, 617)', 'Exercícios extras no drive'],
-    ['Tarefa Tadaiti', 'qui', '(Ap. 6 - M. 16 - Pág. 200)', '(301, 302, 306, 310, 313, 318)'],
-    ['Tarefa Rose', 'qui', '(Ap. 6 - M. 34 - Pág. 146)', '(681, 683, 688, 691, 694*)'],
-    ['Tarefa Felps', 'red', '(Ap. 5 - M. 14 - Pág. 214)', '(241, 244, 246, 248, 249, 250)'],
+    ['Prova Teste I', 'prova', '13h50 às 16h25'],
+    ['Tarefa Vini', 'mat', '(Ap. 6 - M. 19 - Pág. 92) - Os mesmos exercícios da última tarefa', '(361, 364, 365, 368, 369, 370, 372, 374, 378)', '<b>Desafios: </b>(363, 366, 367, 376, 377, 380)'],
+    ['Tarefa Renan', 'mat', '(Ap. 6 - M. 33 - Pág. 24)', '(643, 645, 646, 647, 648, 659)', '<u>Desafios:</u> (644 e 656)'],
+    //['Tarefa Vlad', 'his', '(Ap. 6 - M. 16 - Pág. 83)', '(301, 303, 306, 308, 310, 311, 312, 315, 317, 319)'],
+    ['Tarefa Zé Ferreira', 'gra', '(Ap. 6 - M. 33 e 34 - Pág. 146)', '(651, 654, 658, 661, 662, 667, 677, 680)'],
+    ['Tarefa Lucas', 'fis', '(Ap. 6 - M. 32 - Pág. 61)', '(621, 622, 626, 629, 632, 636)'],
 ];
+
+let tema = 'ECA - Estatuto da Criança e do Adolescente';
 
 const materias = {
     mat: ['Matemática &#128290', 'steelblue'],
@@ -19,6 +21,7 @@ const materias = {
     gra: ['Gramática &#128292', 'darkcyan'],
     fil: ['Filosofia &#x1F9E0', 'lightseagreen'],
     soc: ['Sociologia &#128105', 'firebrick'],
+    prova: ['Prova &#128221', 'darkred']
 }
 
 let tarefasUsuario = []
@@ -56,6 +59,8 @@ const coordsHorario = [
     [asp1, 518, dim.aulasex[0], dim.aulasex[1]], //sexta
 
 ]
+
+document.getElementById('temaredacao').innerHTML = tema
 
 new Promise(function (resolve, reject) {
     function clock() {
