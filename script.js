@@ -3,8 +3,8 @@ let tarefas = [
     ['Tarefa Bruno II', 'qui', '(Ap. 6 - M. 32 - Pág. 170)', '(631)'],
     ['Tarefa Ariad', 'soc', '(Ap. 5 - M. 14 - Pág. 281) ' , '(261, 266, 271, 280)'],
     ['Tarefa Pena I', 'lit', '(Ap. 6 - M. 33 - Pág. 181)', '(643, 644, 649, 653, 654)'],
-    ['Tarefa Pena II', 'lit', '(Ap. 6 - M. 34 - Pág. 184)', '(661, 662, 663, 666, 667)'],
-
+    
+    //['Tarefa Pena II', 'lit', '(Ap. 6 - M. 34 - Pág. 184)', '(661, 662, 663, 666, 667)'],
     //['Tarefa Vlad', 'his', '(Ap. 6 - M. 16 - Pág. 83)', '(301, 303, 306, 308, 310, 311, 312, 315, 317, 319)'],
     //['Tarefa Zé Ferreira', 'gra', '(Ap. 6 - M. 33 e 34 - Pág. 146)', '(651, 654, 658, 661, 662, 667, 677, 680)'],
     //['Tarefa Lucas', 'fis', '(Ap. 6 - M. 32 - Pág. 61)', '(621, 622, 626, 629, 632, 636)'],
@@ -45,7 +45,7 @@ const coordsHorario = [
     [asp1, 357, dim.aulas[0], dim.aulas[1]], //quarta
     [asp1, 538, dim.aulas[0], dim.aulas[1]], //quinta
     [asp1, 720, dim.aulas[0], dim.aulas[1]], //sexta
-    [asp1, 903, dim.aulas[0], dim.aulas[1]], //sabado
+    [asp1, 903, dim.aulas[0], dim.aulas[1] - 3], //sabado
 
     //plantoes
     [asp1, -1, dim.plantoes[0], dim.plantoes[1]], //segunda
