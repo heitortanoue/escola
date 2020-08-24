@@ -1,10 +1,12 @@
 let tarefas = [    
-    ['Tarefa Bruno I', 'qui', '(Ap. 5 - M. 30 - Pág. 182)', '(582, 583, 586, 587, 588, 590, 591, 593, 597)'],
-    ['Tarefa Bruno II', 'qui', '(Ap. 6 - M. 32 - Pág. 170)', '(631)'],
-    ['Tarefa Ariad', 'soc', '(Ap. 5 - M. 14 - Pág. 281) ' , '(261, 266, 271, 280)'],
-    ['Tarefa Pena I', 'lit', '(Ap. 6 - M. 33 - Pág. 181)', '(643, 644, 649, 653, 654)'],
+    ['Tarefa João César', 'fis', '(Ap. 6 - M. 33 - Pág. 23)', '(646, 650, 652, 656, 657, 658)'],
+    ['Tarefa Gui', 'his', '(Ap. 6 - M. 33 - Pág. 42)', '(641, 642, 645, 646, 647, 651, 652 e 659)'],
+    ['Tarefa Rodrigo', 'bio', '(Ap. 6 - M. 34 - Pág. 237)', '(662, 667, 669, 672, 674, 676)'],
+    ['Tarefa LeoGeo', 'geo', '(Ap. 6 - M. 31 e 32 - Pág. 120 e 126)' , '(601, 603, 605, 610 e 619)', '(622, 623, 626, 627, 630, 632 e 637)'],
+    ['Tarefa Marcus Vinícius I', 'qui', '(Ap. 6 - M. 34 - Pág. 175)', '(667, 674, 678, 679)'],
+    ['Tarefa Marcus Vinícius II', 'qui', '(Ap. 6 - M. 35 - Pág. 179)', '(682, 684, 685, 688, 690, 691, 692)'],
     
-    //['Tarefa Pena II', 'lit', '(Ap. 6 - M. 34 - Pág. 184)', '(661, 662, 663, 666, 667)'],
+    //['Tarefa Pena', 'lit', '(Ap. 6 - M. 34 - Pág. 184)', '(661, 662, 663, 666, 667)'],
     //['Tarefa Vlad', 'his', '(Ap. 6 - M. 16 - Pág. 83)', '(301, 303, 306, 308, 310, 311, 312, 315, 317, 319)'],
     //['Tarefa Zé Ferreira', 'gra', '(Ap. 6 - M. 33 e 34 - Pág. 146)', '(651, 654, 658, 661, 662, 667, 677, 680)'],
     //['Tarefa Lucas', 'fis', '(Ap. 6 - M. 32 - Pág. 61)', '(621, 622, 626, 629, 632, 636)'],
@@ -30,6 +32,14 @@ const materias = {
 let tarefasUsuario = []
 
 let isChecked = []
+
+let soundAtivado = false
+let soundbtn = document.querySelector('#soundbtn')
+soundbtn.addEventListener('click', function() {
+    let icon = document.querySelector('#soundbtnicon')
+    soundAtivado ^= true
+    soundAtivado == true ? icon.setAttribute('class', "fa fa-volume-up") : icon.setAttribute('class', "fa fa-volume-off")
+})
 
 const dim = {
     aulas: [190, 156],
@@ -254,7 +264,19 @@ const divTarefa = document.querySelector('#tarefas')
 }*/
 
 renderTarefas = () => {
-
+    congratulations = (p1) => {
+        if (soundAtivado == true) {
+            let audio = new Audio('mario.mp3');
+            audio.volume = 0.2
+            audio.play();
+        }
+            newDivCongratulations = document.createElement('div')
+            let newText = document.createTextNode('🎉 Conseguiu acabar tudo, parabéns! 🎉')
+            newDivCongratulations.setAttribute('class', 'newDivCongratulations')
+            newDivCongratulations.appendChild(newText)
+            p1.parentNode.insertBefore(newDivCongratulations, p1.nextSibling)
+            return
+    }
 
     saveToStorage = (a) => {
         localStorage.setItem('list_todos', JSON.stringify(a))
@@ -369,6 +391,9 @@ renderTarefas = () => {
                 checkboxes.forEach((checkbox) => {
                     isChecked.push(checkbox.checked);
                 });
+                if(isChecked.every(elem => elem == true)) {congratulations(divTarefa)} else {
+                    if(newDivCongratulations) newDivCongratulations.innerHTML = ''
+                }
                 return isChecked;
             }
             saveToStorage(getSelectedCheckboxValues('classCheck'))
