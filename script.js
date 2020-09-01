@@ -5,7 +5,8 @@ let tarefas = [
     ['Tarefa Gui II', 'his', '(Ap. 6 - M. 36 - Pág. 57)', '(702, 703, 704, 710, 711, 712, 714, 717)', 'Fazer apenas os que envolvem Unificação Italiana'],
     ['Tarefa Fefo', 'lit', '(Ap. 6 - M. 35 - Pág. 187)', '(684, 686, 690, 691, 692, 697)'],
     //['Tarefa Thiagão', 'fis', '(Ap. 6 - M. 17 - Pág. 115)', '(321, 322, 325, 328, 329, 332, 338)'], 
-    ['Tarefa Rose', 'qui', '(Ap. 6 - M. 36 - Pág. 153)', '(701, 707, 714, 716, 718, 719)'],
+    ['Tarefa Rose I', 'qui', '(Ap. 6 - M. 36 - Pág. 153)', '(701, 707, 714, 716, 718, 719)'],
+    ['Tarefa Rose II', 'qui', '(Ap. 7 - M. 37 - Pág. 112)', '(722, 724, 729, 730, 736, 740)'],
     
     //['Tarefa Pena', 'lit', '(Ap. 6 - M. 34 - Pág. 184)', '(661, 662, 663, 666, 667)'],
 
