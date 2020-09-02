@@ -1,15 +1,12 @@
 let tarefas = [       
-    ['Tarefa Ditomaso', 'bio', '(Ap. 6 - M. 17 - Pág. 321)', '(321, 324, 327, 334, 337, 340)'],
-    ['Tarefa João César', 'fis', '(Ap. 6 - M. 36 - Pág. 39)', '(701, 703, 706, 707, 710, 711)'],
-    ['Tarefa Gui I', 'his', '(Ap. 6 - M. 35 - Pág. 52)', '(681, 683, 685, 690, 692, 696, 697, 698)'],
-    ['Tarefa Gui II', 'his', '(Ap. 6 - M. 36 - Pág. 57)', '(702, 703, 704, 710, 711, 712, 714, 717)', 'Fazer apenas os que envolvem Unificação Italiana'],
-    ['Tarefa Fefo', 'lit', '(Ap. 6 - M. 35 - Pág. 187)', '(684, 686, 690, 691, 692, 697)'],
-    //['Tarefa Thiagão', 'fis', '(Ap. 6 - M. 17 - Pág. 115)', '(321, 322, 325, 328, 329, 332, 338)'], 
-    ['Tarefa Rose I', 'qui', '(Ap. 6 - M. 36 - Pág. 153)', '(701, 707, 714, 716, 718, 719)'],
-    ['Tarefa Rose II', 'qui', '(Ap. 7 - M. 37 - Pág. 112)', '(722, 724, 729, 730, 736, 740)'],
+    ['Tarefa Rafa', 'mat', '(Ap. 6 - M. 33 - Pág. 62)', '(641, 642, 644, 645, 647, 648, 651, 654)'],
+    ['Tarefa LeoGeo', 'geo', '(Ap. 6 - M. 34 - Pág. 162)', '(661, 663, 665, 666, 667, 669, 670, 671, 679)'],
+    ['Tarefa Zanin', 'geo', '(Ap. 7 - M. 19 - Pág. 214)', '(370, 373, 374, 377)'],
+    ['Tarefa Tio Dani', 'bio', '(Ap. 6 - M. 34 - Pág. 288)', '(663, 665, 667, 670, 671, 674, 676, 677)'],
     
-    //['Tarefa Pena', 'lit', '(Ap. 6 - M. 34 - Pág. 184)', '(661, 662, 663, 666, 667)'],
-
+    //['Tarefa Pena', 'lit', '(Ap. 6 - M. 34 - Pág. 184)', '(661, 662, 663, 666, 667)'],    
+    //['Tarefa Thiagão', 'fis', '(Ap. 6 - M. 17 - Pág. 115)', '(321, 322, 325, 328, 329, 332, 338)'], 
+    //['Tarefa Gui II', 'his', '(Ap. 6 - M. 36 - Pág. 57)', '(702, 703, 704, 710, 711, 712, 714, 717)', 'Fazer apenas os que envolvem Unificação Italiana'],
 ];
 
 let tema = 'Violência';
