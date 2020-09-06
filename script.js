@@ -1,8 +1,9 @@
-let tarefas = [     
+let tarefas = [
+    /*
     ['Tarefa Ariad I', 'soc', '(Ap. 5 - M. 15 - Pág. 292)', '(284, 286, 289, 299)'],     
     ['Tarefa Ariad II', 'soc', '(Ap. 6 - M. 16 - Pág. 277)', '(302, 312, 313, 317, 318)'],       
     ['Tarefa Pena I', 'lit', '(Ap. 6 - M. 36 - Pág. 191)', '(704, 705, 707, 710, 720)'],
-    ['Tarefa Pena II', 'lit', '(Ap. 7 - M. 37 - Pág. 153)', '(721, 724, 731, 732, 734)'],      
+    ['Tarefa Pena II', 'lit', '(Ap. 7 - M. 37 - Pág. 153)', '(721, 724, 731, 732, 734)'],      */
     
     //['Tarefa Rose', 'qui', '(Ap. 7 - M. 38 - Pág. 121)', '(741, 742, 744, 748, 751, 753, 754)'],
 
@@ -10,7 +11,7 @@ let tarefas = [
     //['Tarefa Gui II', 'his', '(Ap. 6 - M. 36 - Pág. 57)', '(702, 703, 704, 710, 711, 712, 714, 717)', 'Fazer apenas os que envolvem Unificação Italiana'],
 ];
 
-let tema = 'Violência';
+let tema = 'Acesso à Informação';
 
 const materias = {
     mat: ['Matemática &#128290', 'steelblue'],
