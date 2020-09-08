@@ -1,14 +1,14 @@
 let tarefas = [
-    
-    ['Tarefa Ariad I', 'soc', '(Ap. 5 - M. 15 - Pág. 292)', '(284, 286, 289, 299)'],     
-    ['Tarefa Ariad II', 'soc', '(Ap. 6 - M. 16 - Pág. 277)', '(302, 312, 313, 317, 318)'],       
-    ['Tarefa Pena I', 'lit', '(Ap. 6 - M. 36 - Pág. 191)', '(704, 705, 707, 710, 720)'],
-    ['Tarefa Pena II', 'lit', '(Ap. 7 - M. 37 - Pág. 153)', '(721, 724, 731, 732, 734)'],      
-    
-    //['Tarefa Rose', 'qui', '(Ap. 7 - M. 38 - Pág. 121)', '(741, 742, 744, 748, 751, 753, 754)'],
+    ['Tarefa Ditomaso', 'bio', '(Ap. 6 - M. 17 - Pág. 321)', '(321, 324, 327, 334, 337 e 340)'],  
+    ['Tarefa João César', 'fis', '(Ap. 7 - M. 37 - Pág. 9)', '(724, 725, 728, 729, 732, 737, 738)','(Lista no Drive)'],       
+    ['Tarefa Gui II', 'his', '(Ap. 6 - M. 36 - Pág. 57)', '(702, 703, 704, 710, 711, 712, 714, 717)'],    
+    ['Tarefa Pena II', 'lit', '(Ap. 7 - M. 37 - Pág. 153)', '(721, 724, 731, 732, 734)'],  
+    ['Tarefa Fefo', 'lit', '(Ap. 7 - M. 38 - Pág. 156)', '(742, 744, 746, 749, 751, 754)'],      
+    ['Tarefa Thiagão', 'fis', '(Ap. 6 - M. 17 - Pág. 115)', '(321, 322, 325, 328, 329, 332, 338)'], 
+    ['Tarefa Rose', 'qui', '(Ap. 7 - M. 39 - Pág. 125)', '(761, 762, 766, 769, 772, 779)'],
 
-    //['Tarefa Thiagão', 'fis', '(Ap. 6 - M. 17 - Pág. 115)', '(321, 322, 325, 328, 329, 332, 338)'], 
-    //['Tarefa Gui II', 'his', '(Ap. 6 - M. 36 - Pág. 57)', '(702, 703, 704, 710, 711, 712, 714, 717)', 'Fazer apenas os que envolvem Unificação Italiana'],
+
+    //['Tarefa Ariad II', 'soc', '(Ap. 6 - M. 16 - Pág. 277)', '(302, 312, 313, 317, 318)'],       
 ];
 
 let tema = 'Acesso à Informação';
