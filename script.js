@@ -1,11 +1,11 @@
-let tarefas = [
-    ['Tarefa Vini', 'mat', '(Ap. 6 - M. 34 e 35 - Pág. 78)', '(672, 673, 674, 680, 684, 687, 688, 689, 694)'],  
-    ['Tarefa João César', 'fis', '(Lista no Drive)'],       
-    ['Tarefa LeoGeo', 'geo', '(Ap. 6 - M. 35 - Pág. 168)', '(681, 682, 684, 685, 690, 692, 694, 697)'],
-    ['Tarefa Murilo', 'gra', '(Ap. 7 - M. 39 - Pág. 127)', '(761, 762, 763, 765, 769, 772)'],      
-    ['Tarefa Zanin', 'geo', '(Ap. 7 - M. 20 - Pág. 233)', '(383, 381, 384, 388, 397)'], 
-    ['Tarefa Tio Dani', 'bio', '(Ap. 6 - M. 35 - Pág. 292)', '(685, 687, 688, 691, 692, 696, 700)'],
-
+let tarefas = [       
+    ['Tarefa João César', 'fis', '(Lista no Drive)'],    
+    ['Tarefa Tio Dani', 'bio', '(Ap. 6 - M. 36 - Pág. 297)', '(701, 705, 707, 708, 710, 712, 715)'],
+    ['Tarefa Renan', 'mat', '(Ap. 7 - M. 37 - Pág. 13)', '(721, 722, 728, 733, 734, 736, 737)'],  
+    ['Tarefa Lucas', 'fis', '(Ap. 6 - M. 35 - Pág. 84)', '(681, 684, 686, 687, 691, 692, 697, 699)'],
+    ['Tarefa Tadaiti', 'qui', '(Ap. 6 - M. 19 - Pág. 196)', '(361, 362, 363, 364, 368, 372)'],      
+    ['Tarefa Rose', 'qui', '(Ap. 7 - M. 40 - Pág. 129)', '(785, 786, 788, 794, 795, 796, 797)'], 
+    ['Tarefa Felps', 'red', '(Ap. 6 - M. 16 - Pág. 209)', '(301 e 309)'], 
 
     //['Tarefa Ariad II', 'soc', '(Ap. 6 - M. 16 - Pág. 277)', '(302, 312, 313, 317, 318)'],       
 ];
@@ -262,19 +262,31 @@ const divTarefa = document.querySelector('#tarefas')
 }*/
 
 renderTarefas = () => {
-    congratulations = (p1) => {
+    let d = new Date()
+
+    if (localStorage.getItem('dia') && Number(localStorage.getItem('dia')) != d.getDay()) {
+        localStorage.setItem('list_todos', JSON.stringify([]))     
+        localStorage.setItem('dia', d.getDay())
+    } else {
+        localStorage.setItem('dia', d.getDay())
+    }
+    congratulations = (p1, alou) => {
         if (soundAtivado == true) {
             let audio = new Audio('mario.mp3');
             audio.volume = 0.2
             audio.play();
         }
+        if (alou.every(elem => elem == true)) {
+        if (document.querySelector('.newDivCongratulations') == undefined || document.querySelector('.newDivCongratulations').innerHTML == '') {
             newDivCongratulations = document.createElement('div')
             let newText = document.createTextNode('🎉 Conseguiu acabar tudo, parabéns! 🎉')
             newDivCongratulations.setAttribute('class', 'newDivCongratulations')
             newDivCongratulations.appendChild(newText)
             p1.parentNode.insertBefore(newDivCongratulations, p1.nextSibling)
-            return
-    }
+            return}} else {
+                document.querySelector('.newDivCongratulations').innerHTML = '';
+            }}
+    
 
     saveToStorage = (a) => {
         localStorage.setItem('list_todos', JSON.stringify(a))
@@ -389,11 +401,9 @@ renderTarefas = () => {
                 checkboxes.forEach((checkbox) => {
                     isChecked.push(checkbox.checked);
                 });
-                if(isChecked.every(elem => elem == true)) {congratulations(divTarefa)} else {
-                    if(newDivCongratulations) newDivCongratulations.innerHTML = ''
-                }
+                congratulations(divTarefa, isChecked)
                 return isChecked;
-            }
+            }         
             saveToStorage(getSelectedCheckboxValues('classCheck'))
         })
 
