@@ -11,7 +11,7 @@ let tarefas = [
     //['Tarefa Ariad II', 'soc', '(Ap. 6 - M. 16 - Pág. 277)', '(302, 312, 313, 317, 318)'],       
 ];
 
-let tema = 'Acesso à Informação';
+let tema = 'Memes';
 
 const materias = {
     mat: ['Matemática &#128290', 'steelblue'],
@@ -263,13 +263,14 @@ const divTarefa = document.querySelector('#tarefas')
 }*/
 
 renderTarefas = () => {
-    let d = new Date()
+    let data = new Date()
+    let ddate = data.getDate()
 
-    if (localStorage.getItem('dia') && Number(localStorage.getItem('dia')) != d.getDay()) {
+    if (localStorage.getItem('dia') && Number(localStorage.getItem('dia')) != ddate) {
         localStorage.setItem('list_todos', JSON.stringify([]))     
-        localStorage.setItem('dia', d.getDay())
+        localStorage.setItem('dia', ddate)
     } else {
-        localStorage.setItem('dia', d.getDay())
+        localStorage.setItem('dia', ddate)
     }
     congratulations = (p1, alou) => {
         if (soundAtivado == true) {
@@ -286,6 +287,7 @@ renderTarefas = () => {
             p1.parentNode.insertBefore(newDivCongratulations, p1.nextSibling)
             return}} else {
                 document.querySelector('.newDivCongratulations').innerHTML = '';
+                return
             }}
     
 
@@ -402,7 +404,7 @@ renderTarefas = () => {
                 checkboxes.forEach((checkbox) => {
                     isChecked.push(checkbox.checked);
                 });
-                congratulations(divTarefa, isChecked)
+                //congratulations(divTarefa, isChecked)
                 return isChecked;
             }         
             saveToStorage(getSelectedCheckboxValues('classCheck'))
