@@ -1,12 +1,10 @@
-let tarefas = [       
-    ['Tarefa João César', 'fis', '(Lista no Drive)'],    
-    ['Tarefa Vini', 'mat', '(Ap. 6 - M. 36 - Pág. 124)', '(701, 702, 704, 707, 712)'],    
-    ['Tarefa Rodrigo', 'bio', '(Ap. 6 - M. 36 - Pág. 250)', '(701, 704, 705, 709, 711, 712, 714, 720)'],      
-    ['Tarefa Renan', 'mat', '(Ap. 7 - M. 38 - Pág. 38)', '(741 ou 756, 749 ou 752, 746 ou 755, 750, 757, 758, 759)'],      
-    ['Tarefa Vlad', 'his', '(Ap. 6 - M. 17 - Pág. 94)', '(321, 323, 323, 326, 328, 329, 332, 333, 335, 339)'],
-    ['Tarefa Zé Ferreira', 'gra', '(Ap. 7 - M. 41/42 - Pág. 138)', '(804, 808, 830, 836, 840)'], 
-    ['Tarefa Lucas', 'fis', '(Ap. 6 - M. 36 - Pág. 89)', '(702, 704, 706, 709, 710, 712)'],
-    ['Prova Específica (QUÍ/FIL/SOC/BIO)', 'prova', '(13h50 às 17h15)'], 
+let tarefas = [     
+    ['Tarefa Vlad', 'his', '(Ap. 6 - M. 17 - Pág. 94)', '(321, 323, 323, 326, 328, 329, 332, 333, 335, 339)'],      
+    ['Tarefa João César', 'fis', '(Ap. 7 - M. 38 - Pág. 17)', '(741, 742, 744, 746, 748, 750)','(Lista no Drive)'],    
+    ['Tarefa Gui', 'his', '(Ap. 7 - M. 37 - Pág. 37)', '(722, 724, 727, 731, 733, 734, 738)'],    
+    ['Tarefa Rodrigo', 'bio', '(Ap. 7 - M. 37 - Pág. 225)', '(721, 722, 723, 725, 733, 737, 739, 740)'],      
+    ['Tarefa LeoGeo', 'geo', '(Ap. 6 - M. 36 - Pág. 179)', '(701, 703, 705, 711, 713, 715, 710, 713)'],      
+    ['Tarefa Marcus Vinicius', 'qui', '(Ap. 8 - M. 43 - Pág. 149)', '(843, 844, 845, 846, 847, 849, 850)'], 
 
     //['Tarefa Ariad II', 'soc', '(Ap. 6 - M. 16 - Pág. 277)', '(302, 312, 313, 317, 318)'],       
 ];
