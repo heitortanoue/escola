@@ -1,14 +1,16 @@
 let tarefas = [
-    ['Tarefa Vini', 'mat', '(Ap. 7 - M. 41 - Pág. 69)', '(801, 802, 805, 807, 810, 815, 816, 817)', '(Desafios: 804, 808, 811, 812, 814)'],   
-    ['Tarefa Rodrigo', 'bio', '(Ap. 7 - M. 39 - Pág. 233)', '(761, 763, 767, 768, 769, 772, 777, 780)'],         
-    ['Tarefa Renan', 'mat', '(Ap. 7 - M. 41 - Pág. 28)', '(801, 803, 804, 805, 812, 817, 818)'],   
-    ['Tarefa Vlad', 'his', '(Ap. 7 - M. 38 - Pág. 59)', '(362, 364, 365, 369, 372, 373, 374, 375, 378, 379, 380)'],
+
+    //['Tarefa João César', 'fis', '(Ap. 7 - M. 41 - Pág. 32)', '(801, 806, 808, 809, 812, 814)'],         
+    ['Tarefa Guilherme', 'his', '(Ap. 7 - M. 39 - Pág. 49)', '(761, 763, 765, 767, 774, 776)'],   
+    ['Tarefa Rodrigo', 'bio', '(Ap. 7 - M. 40 - Pág. 237)', '(781, 782, 785, 787, 791, 795, 798, 800)'],
+    ['Tarefa Vini', 'mat', '(Ap. 7 - M. 42 - Pág. 77)', '(821, 822, 823, 824, 826, 829, 830, 834)', '(Desafios: 831, 838, 840)'],
+    ['Tarefa Marcus Vinicius', 'qui', '(Ap. 8 - M. 45 - Pág. 156)', '(882, 883, 884, 886, 887)'],
+    
+    //['Tarefa Vlad', 'fil', '(Ap. 7 - M. 21 - Pág. 272)', '(401, 403, 406, 409, 410, 414, 416, 418, 420)'],   
     //['Tarefa Zé Ferreira', 'gra', '(Ap. 7 - M. 21 - Pág. 203)', '(401, 402, 407, 408, 409, 410)'],    
-    ['Tarefa Lucas', 'fis', '(Ap. 7 - M. 39 - Pág. 63)', '(761, 763, 767, 768, 769, 772, 776)'],
-    ['Prova de Redação', 'prova', '(13h50 às 16h25)'],
 ];
 
-let tema = 'Cibercondria';
+let tema = 'Jogos de Azar';
 
 const materias = {
     mat: ['Matemática &#128290', 'steelblue'],
