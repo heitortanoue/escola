@@ -12,7 +12,7 @@ let tarefas = [
     //['Tarefa Marcus Vinicius', 'qui', '(Ap. 8 - M. 46 - Pág. 159)', '(901, 902, 906, 907, 912, 915)'],
 ];
 
-let tema = 'Obesidade';
+let tema = 'Nomofobia';
 
 const materias = {
     mat: ['Matemática &#128290', 'steelblue'],
