@@ -1,8 +1,12 @@
-let tarefas = [    
-    ['AVISO', 'aviso', 'Por conta da volta das aulas presenciais e da divisão dos horários e das tarefas, vou deixar de colocar as coisas no site, por ser muito díficil de colocar tudo'],    
-];
+let tarefas = [
+    ['Tarefa João César', 'fis', '(Ap. 7 - M. 43 - Pág. 13)', '(845, 847, 848, 849, 855, 856, 857)'],
+    ['Tarefa Dito', 'bio', '(Ap. 7 - M. 20 - Pág. 330)', '(381, 383, 386, 387, 390, 391, 394, 398, 399)'],
+    ['Tarefa Bruno', 'qui', '(Ap. 7 - M. 42 - Pág. 178)', '(821, 822, 823, 826, 828, 833, 837)'],
+    ['Tarefa Vini', 'mat', '(Ap. 7 - M.  - Pág. )', '(783, 784, 786, 787, 788, 793, 794, 795)', '(Desafios: 781, 790, 791, 797)'],
+    ['Tarefa Gui', 'his', '(Ap. 8 - M. 43 - Pág. 30)', '(843, 844, 847, 849, 850, 852, 854, 855, 860)'],
+]
 
-let tema = '';
+let tema = 'Nomofobia';
 
 const materias = {
     mat: ['Matemática &#128290', 'steelblue'],
