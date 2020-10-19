@@ -1,18 +1,8 @@
 let tarefas = [    
-    ['Tarefa Vini', 'mat', '(Ap. 7 - M. 40 - Pág. 60)', '(781, 783, 784, 786, 788, 790, 791, 793, 794, 795)'],    
-    ['Tarefa Rodrigo', 'bio', '(Ap. 7 - M. 43 - Pág. 208)', '(841, 843, 845, 847, 852, 853, 860)'], 
-    ['Tarefa Renan', 'mat', '(Ap. 7 - M. 40 - Pág. 60)', '(781, 783, 784, 786, 788, 790, 791, 793, 794, 795)'],  
-    ['Tarefa Vlad', 'his', '(Ap. 7 - M. 21 - Pág. 272)', '(401, 403, 406, 409, 410, 414, 416, 418, 420)'],   
-    //['Tarefa Tadaiti', 'qui', '(Ap. 7 - M. 41 - Pág. 77)', '(802, 805, 810, 812, 813, 817, 820)'],    
-    //['Tarefa Lucas', 'fis', '(Ap. 8 - M. 43 - Pág. 53)', '(841, 842, 849, 851, 855, 859, 860)'],    
-    
-    // FAZER ['Tarefa Zanin', 'geo', '(Ap. 8 - M. 23 - Pág. 204)', '(441, 442, 444, 451, 453)'],    
-    //['Tarefa Tio Dani', 'bio', '(Ap. 7 - M. 39 e 40 - Pág. 291)', '(763, 767, 768, 775, 779, 782, 764, 787, 788, 792)'],
-    //['Tarefa Vlad', 'fil', '(Ap. 7 - M. 21 - Pág. 272)', '(401, 403, 406, 409, 410, 414, 416, 418, 420)'],  
-    //['Tarefa Marcus Vinicius', 'qui', '(Ap. 8 - M. 46 - Pág. 159)', '(901, 902, 906, 907, 912, 915)'],
+    ['AVISO', 'aviso', 'Por conta da volta das aulas presenciais e da divisão dos horários e das tarefas, vou deixar de colocar as coisas no site, por ser muito díficil de colocar tudo'],    
 ];
 
-let tema = 'Nomofobia';
+let tema = '';
 
 const materias = {
     mat: ['Matemática &#128290', 'steelblue'],
@@ -26,7 +16,8 @@ const materias = {
     gra: ['Gramática &#128292', 'darkcyan'],
     fil: ['Filosofia &#x1F9E0', 'lightseagreen'],
     soc: ['Sociologia &#128105', 'firebrick'],
-    prova: ['Prova &#128221', 'darkred']
+    prova: ['Prova &#128221', 'darkred'],
+    aviso: ['Aviso &#9888', "red"],
 }
 
 let tarefasUsuario = []
