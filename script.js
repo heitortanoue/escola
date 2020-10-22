@@ -1,11 +1,11 @@
 let tarefas = [
-    ['Tarefa Marcus Vinicius', 'qui', '(Ap. 8 - M. 47 - Pág. 164)', '(921, 922, 923, 924, 927, 934)'],
-    ['Tarefa LeoGeo', 'geo', '(Ap. 7 - M. 40 - Pág. 173)', '(781, 782, 783, 785, 786, 788, 798, 799)'],
-    ['Tarefa Rose I', 'qui', '(Ap. 8 - M. 45 - Pág. 118)', '(882, 885, 888, 892, 895, 898, 900)'],
-    ['Tarefa Rose II', 'qui', '(Ap. 8 - M. 46 - Pág. 121)', '(902, 903, 905, 906, 913, 916, 919)'],    
+    ['Tarefa Lucas I', 'fis', '(Ap. 8 - M. 44 - Pág. 57)', '(861, 863, 867, 871, 874, 879)'],
+    ['Tarefa Lucas II', 'fis', '(Ap. 8 - M. 43 - Pág. 53)', '(841, 842, 849, 851, 855, 859 e Desafio: 860)'],
+    ['Tarefa Rafa', 'mat', '(Ap. 9 - M. 50 - Pág. 69)', '(981, 982, 985, 986, 987, 990, 996, 998)'],
+    ['Tarefa Rodrigo', 'bio', '(Ap. 8 - M. 44 - Pág. 118)', '(861, 862, 864, 866, 871, 874, 879, 880)'],  
+    //['Tarefa Zé Ferreira', 'gra', '(Ap. 8 - M. 47/48 - Pág. 145)', '(921, 926, 932, 935, 939, 941, 943, 947, 953, 957)'],  
+    ['Lista Murilo', 'red', '(Ap. 8 - M. 22/23 - Pág. )', '(No drive)'],  
     ['Lista Rose', 'qui', '(No drive)'],
-    ['Tarefa Tio Dani', 'bio', '(Ap. 7 - M. 40 - Pág. 291)', '(763, 767, 768, 775, 779, 782, 764, 788)'],
-    ['Tarefa Zanin', 'geo', '(Ap. 8 - M. 23 - Pág. 204)', '(441, 442, 444, 451, 453)'],
 ]
 
 let tema = 'Nomofobia';
@@ -70,7 +70,7 @@ const coordsHorario = [
 
 ]
 
-document.getElementById('temaredacao').innerHTML = tema
+
 
 new Promise(function (resolve, reject) {
     function clock() {
@@ -92,8 +92,8 @@ new Promise(function (resolve, reject) {
     }
     setInterval(clock, 1000);
 
-    var d = new Date()
-    var weekday = new Array(7);
+    d = new Date()
+    weekday = new Array(7);
     weekday[0] = "domingo";
     weekday[1] = "segunda-feira";
     weekday[2] = "terça-feira";
@@ -122,6 +122,21 @@ new Promise(function (resolve, reject) {
     const tit = document.querySelector('#ptit')
     tit.innerHTML = `${r}, hoje é ${n}!`
 })
+
+let frase
+if (n == "sexta-feira") {
+    frase = `O prazo acaba hoje!`
+} else if (5 - Number(d.getDay()) == 1) {
+    frase = `O prazo acaba daqui 1 dia!`
+} else {
+    frase = `O prazo acaba daqui ${5 - Number(d.getDay())} dias!`
+}
+
+if (tema) {
+document.getElementById('temaredacao').innerHTML = '<b>' + tema + '</b>' + '<br>' + frase
+} else {
+document.getElementById('temaredacao').innerHTML = 'Não há redação pra esse semana!' 
+}
 
 cf = (str) => {
     let dia = (i, num) => {
