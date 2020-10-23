@@ -1,11 +1,13 @@
 let tarefas = [
-    ['Tarefa Lucas I', 'fis', '(Ap. 8 - M. 44 - Pág. 57)', '(861, 863, 867, 871, 874, 879)'],
-    ['Tarefa Lucas II', 'fis', '(Ap. 8 - M. 43 - Pág. 53)', '(841, 842, 849, 851, 855, 859 e Desafio: 860)'],
-    ['Tarefa Rafa', 'mat', '(Ap. 9 - M. 50 - Pág. 69)', '(981, 982, 985, 986, 987, 990, 996, 998)'],
-    ['Tarefa Rodrigo', 'bio', '(Ap. 8 - M. 44 - Pág. 118)', '(861, 862, 864, 866, 871, 874, 879, 880)'],  
-    //['Tarefa Zé Ferreira', 'gra', '(Ap. 8 - M. 47/48 - Pág. 145)', '(921, 926, 932, 935, 939, 941, 943, 947, 953, 957)'],  
-    ['Lista Murilo', 'red', '(Ap. 8 - M. 22/23 - Pág. )', '(No drive)'],  
-    ['Lista Rose', 'qui', '(No drive)'],
+    ['Lista João César', 'fis', '(No drive)'],
+    ['Tarefa João César', 'fis', '(Ap. 7 - M. 44 - Pág. 17)', '(866, 865, 867, 869, 872, 875)'],
+    ['Tarefa Vlad', 'fil', '(Ap. 7 - M. 21 - Pág. 272)', '(401, 403 406 409, 410, 414)'],
+    ['Tarefa Zé Ferreira', 'gra', '(Ap. 8 - M. 47/48 - Pág. 145)', '(921, 926, 932, 935, 939, 941, 943, 947, 953, 957)'],
+    ['Tarefa Rodrigo', 'bio', '(Ap. 8 - M. 44 - Pág. 118)', '(861, 862, 864, 866, 871, 874, 879, 880)'],   
+    ['Tarefa Renan', 'mat', '(Ap. 8 - M. 46/47 - Pág. 29)', '(902, 903, 904, 905, 911, 913, 931, 933)'], 
+    
+     //['Lista Rose', 'qui', '(No drive)'], 
+     //['Tarefa Rafa', 'mat', '(Ap. 9 - M. 50 - Pág. 69)', '(981, 982, 985, 986, 987, 990, 996, 998)'],   
 ]
 
 let tema = 'Nomofobia';
