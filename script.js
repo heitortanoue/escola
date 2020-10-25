@@ -1,13 +1,12 @@
 let tarefas = [
     ['Lista João César', 'fis', '(No drive)'],
-    //['Tarefa João César', 'fis', '(Ap. 7 - M. 44 - Pág. 17)', '(866, 865, 867, 869, 872, 875)'],
+    ['Tarefa João César', 'fis', '(Ap. 7 - M. 44 - Pág. 17)', '(866, 865, 867, 869, 872, 875)'],
     ['Tarefa Ariad I', 'soc', '(Ap. 8 - M. 22 - Pág. 265)', '(421, 422, 437, 440)'],
     ['Tarefa Ariad II', 'soc', '(Ap. 8 - M. 23/24 - Pág. 269)', '(442, 445, 459, 462, 464, 479)'],
     ['Tarefa Pena', 'lit', '(Ap. 9 - M. 49 - Pág. 171)', '(961, 962, 963, 964, 971, 972)'],
     ['Tarefa Lucas', 'fis', '(Ap. 8 - M. 45 - Pág. 67)', '(881, 882, 888, 890, 892, 896)'],
-
-     //['Lista Rose', 'qui', '(No drive)'], 
-     //['Tarefa Rafa', 'mat', '(Ap. 9 - M. 50 - Pág. 69)', '(981, 982, 985, 986, 987, 990, 996, 998)'],   
+     ['Lista Rose', 'qui', '(No drive)'], 
+     ['Tarefa Rafa', 'mat', '(Ap. 9 - M. 50 - Pág. 69)', '(981, 982, 985, 986, 987, 990, 996, 998)'],   
 ]
 
 let tema = '';
