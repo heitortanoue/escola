@@ -1,12 +1,15 @@
-let tarefas = [
+let tarefas = [    
+    ['Tarefa Rodrigo I', 'bio', '(Ap. 8 - M. 45 - Pág. 227)', '(884, 888, 891, 900)'],
+    ['Tarefa Rodrigo II', 'bio', '(Ap. 8 - M. 46 - Pág. 231)', '(906, 908, 918, 919)'],
+    ['Tarefa Bruno', 'qui', '(Ap. 9 - M. 52 - Pág. 160)', '(1021, 1022,1023, 1030, 1034, 1035)'],
     ['Lista João César', 'fis', '(No drive)'],
-    ['Tarefa João César', 'fis', '(Ap. 7 - M. 44 - Pág. 17)', '(866, 865, 867, 869, 872, 875)'],
-    ['Tarefa Ariad I', 'soc', '(Ap. 8 - M. 22 - Pág. 265)', '(421, 422, 437, 440)'],
-    ['Tarefa Ariad II', 'soc', '(Ap. 8 - M. 23/24 - Pág. 269)', '(442, 445, 459, 462, 464, 479)'],
-    ['Tarefa Pena', 'lit', '(Ap. 9 - M. 49 - Pág. 171)', '(961, 962, 963, 964, 971, 972)'],
-    ['Tarefa Lucas', 'fis', '(Ap. 8 - M. 45 - Pág. 67)', '(881, 882, 888, 890, 892, 896)'],
-     ['Lista Rose', 'qui', '(No drive)'], 
-     ['Tarefa Rafa', 'mat', '(Ap. 9 - M. 50 - Pág. 69)', '(981, 982, 985, 986, 987, 990, 996, 998)'],   
+    ['Tarefa João César I', 'fis', '(Ap. 8 - M. 44 - Pág. 17)', '(866, 865, 867, 869, 872, 875)'],
+    ['Tarefa João César II', 'fis', '(Ap. 8 - M. 45 - Pág. 30)', '(881, 883, 886, 889, 891, 893, 894, 896)'],
+    ['Tarefa Ditomaso', 'bio', '(Ap. 8 - M. 23 - Pág. 322)', '(441, 443, 444, 447, 449, 451, 452, 457)'],
+
+    //['Tarefa LeoGeo', 'geo', '(Ap. 7 - M. 41 - Pág. 180)', '(801, 802, 804, 808, 809, 814, 817, 818, 819)'],
+    //['Lista Rose', 'qui', '(No drive)'], 
+    //['Tarefa Rafa', 'mat', '(Ap. 9 - M. 50 - Pág. 69)', '(981, 982, 985, 986, 987, 990, 996, 998)'],   
 ]
 
 let tema = '';
