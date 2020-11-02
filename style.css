@@ -21,18 +21,18 @@
   }
   
   :root[color-mode="dark"] {
-    --surface1: #373F51;
-    --surface2: #4A556D;
-    --surface3: #5B6886;
+    --surface1: #2f3437;
+    --surface2: #4B5458;
+    --surface3: #677479;
     --element1: #eeeeee;
     --element2: #dddddd;
     --element3: #cccccc;
     --elementInverse: #111;
-    --primary: #F56476;
-    --secondary: #F0D67F;
-    --secondaryInt: #EED06D;
-    --secondaryMatch: #DCBA6A;
-    --tertiary: #eee8a9;
+    --primary: #FCA34A;
+    --secondary: #fdb871;
+    --secondaryInt: #FDC286;
+    --secondaryMatch: #FEC286;
+    --tertiary: #FED6AF;
     --box-shadow: 5px 5px 1px #1d1d1d, -5px -5px 1px #272727;
   }
 

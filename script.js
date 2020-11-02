@@ -11,7 +11,7 @@ let tarefas = [
 
 ]
 
-let tema = '';
+let tema = 'Vacinação';
 
 const materias = {
     mat: ['Matemática &#128290', 'steelblue'],
