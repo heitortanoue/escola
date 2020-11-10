@@ -1,8 +1,8 @@
 let tarefas = [       
-    ['Tarefa Rodrigo I', 'bio', '(Ap. 9 - M. 49 - Pág. 211)', '(esperando o zeid passar)'], //acabar   
+    ['Tarefa Rodrigo I', 'bio', '(Ap. 9 - M. 49 - Pág. 211)', '(961, 962, 966, 970, 972, 973, 977, 980)'], //acabar   
     ['Tarefa Rodrigo II', 'bio', '(Ap. 9 - M. 50 - Pág. 221)', '(981, 987, 989, 992, 993, 995, 997, 1000)'],  
     ['Tarefa Vlad', 'his', '(Ap. 9 - M. 25 - Pág. 77)', '(481, 484, 486, 488, 489, 491, 494, 497, 499, 500)'],     
-    ['Tarefa Murilo', 'red', '(Ap. 9)', '(Slide do drive)'],
+    ['Tarefa Murilo', 'red', '(Ap. 9 - M. 26 - Pág. 219)', '(Slide do drive + 501, 502, 503, 518)'],
     ['Tarefa Fefo', 'lit', '(Ap. 9 - M. 52 - Pág. 189)', '(1024, 1033, 1035, 1036, 1037, 1038)'],
     ['Tarefa Thiagão', 'fis', '(Ap. 8 - M. 22 - Pág. 87)', '(421, 425, 427, 428, 434, 436, 437, 438)'],
 
