@@ -1,13 +1,13 @@
-let tarefas = [     
-    ['Tarefa João César', 'fis', '(Ap. 8 - M. 45 - Pág. 30)', '(881, 883, 886, 889, 891, 893, 894, 896)'],       
-    ['Tarefa Bruno', 'qui', '(Ap. 9 - M. 53/54 - Pág. 168)', '(1044, 1046, 1050, 1051, 1053, 1059, 1061, 1063, 1064, 1066, 1067, 1068, 1073)'],  
-    ['Tarefa Zé Ferreira', 'gra', '(Ap. 9 - M. 51/52 - Pág. 145)', '(1002, 1006, 1008, 1015, 1024, 1025, 1032, 1040)'],
-    ['Tarefa Tadaiti', 'qui', '(Ap. 8 - M. 24 - Pág. 196)', '(461, 462, 466, 467, 469, 473)'],     
-    ['Tarefa Rodrigo', 'bio', '(Ap. 8 - M. 48 - Pág. 239)', '(942, 943, 944, 946, 947, 955, 957, 959)'],     
+let tarefas = [       
+    ['Tarefa Rodrigo I', 'bio', '(Ap. 9 - M. 49 - Pág. 211)', '(esperando o zeid passar)'], //acabar   
+    ['Tarefa Rodrigo II', 'bio', '(Ap. 9 - M. 50 - Pág. 221)', '(981, 987, 989, 992, 993, 995, 997, 1000)'],  
+    ['Tarefa Vlad', 'his', '(Ap. 9 - M. 25 - Pág. 77)', '(481, 484, 486, 488, 489, 491, 494, 497, 499, 500)'],     
+    ['Tarefa Murilo', 'red', '(Ap. 9)', '(Slide do drive)'],
+    ['Tarefa Fefo', 'lit', '(Ap. 9 - M. 52 - Pág. 189)', '(1024, 1033, 1035, 1036, 1037, 1038)'],
+    ['Tarefa Thiagão', 'fis', '(Ap. 8 - M. 22 - Pág. 87)', '(421, 425, 427, 428, 434, 436, 437, 438)'],
 
     //['Tarefa Tio Dani', 'bio', '(Ap. 8 - M. 43 - Pág. 252)', '(846, 848, 850, 854, 855)'],
     //['Tarefa Tio Dani', 'bio', '(Ap. 8 - M. 44 - Pág. 264)', '(868, 871, 873, 874, 875)'],      
-
 ]
 
 let tema = `Tabagismo (ENEM) ou <br> Impactos da COVID-19 (VUNESP)`;
@@ -20,7 +20,7 @@ const materias = {
     his: ['História &#128220', 'goldenrod'],
     geo: ['Geografia &#127758', 'tomato'],
     lit: ['Literatura &#128218', 'deeppink'],
-    red: ['Redação &#9997', 'sienna'],
+    red: ['Interpretação &#9997', 'sienna'],
     gra: ['Gramática &#128292', 'darkcyan'],
     fil: ['Filosofia &#x1F9E0', 'lightseagreen'],
     soc: ['Sociologia &#128105', 'firebrick'],
