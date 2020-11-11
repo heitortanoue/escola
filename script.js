@@ -1,13 +1,10 @@
 let tarefas = [       
-    ['Tarefa Rodrigo I', 'bio', '(Ap. 9 - M. 49 - Pág. 211)', '(961, 962, 966, 970, 972, 973, 977, 980)'], //acabar   
-    ['Tarefa Rodrigo II', 'bio', '(Ap. 9 - M. 50 - Pág. 221)', '(981, 987, 989, 992, 993, 995, 997, 1000)'],  
-    ['Tarefa Vlad', 'his', '(Ap. 9 - M. 25 - Pág. 77)', '(481, 484, 486, 488, 489, 491, 494, 497, 499, 500)'],     
-    ['Tarefa Murilo', 'red', '(Ap. 9 - M. 26 - Pág. 219)', '(Slide do drive + 501, 502, 503, 518)'],
-    ['Tarefa Fefo', 'lit', '(Ap. 9 - M. 52 - Pág. 189)', '(1024, 1033, 1035, 1036, 1037, 1038)'],
-    ['Tarefa Thiagão', 'fis', '(Ap. 8 - M. 22 - Pág. 87)', '(421, 425, 427, 428, 434, 436, 437, 438)'],
-
-    //['Tarefa Tio Dani', 'bio', '(Ap. 8 - M. 43 - Pág. 252)', '(846, 848, 850, 854, 855)'],
-    //['Tarefa Tio Dani', 'bio', '(Ap. 8 - M. 44 - Pág. 264)', '(868, 871, 873, 874, 875)'],      
+    ['Tarefa Tio Dani I', 'bio', '(Ap. 8 - M. 43 - Pág. 252)', '(846, 848, 850, 854, 855)'],
+    ['Tarefa Tio Dani II', 'bio', '(Ap. 8 - M. 44 - Pág. 264)', '(868, 871, 873, 874, 875)'],  
+    ['Tarefa Rafa', 'mat', '(Ap. 9 - M. 51 - Pág. 72)', '(1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008)'],     
+    ['Tarefa Zanin', 'geo', '(Ap. 9 - M. 26 - Pág. 210)', '(517, 505, 519, 514, 508)'],
+    ['Tarefa Marcus Vinicius', 'qui', '(Ap. 9 - M. 50 - Pág. 152)', '(982, 983, 986, 988)'],    
+     //['Tarefa João César', 'fis', '(Ap. 8 - M. 46/47 - Pág. 34 e 38)', '(906, 907, 908, 912, 913, 914, 917, 922, 923, 926, 927, 931, 935)'], 
 ]
 
 let tema = `Tabagismo (ENEM) ou <br> Impactos da COVID-19 (VUNESP)`;
