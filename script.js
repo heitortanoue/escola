@@ -5,7 +5,7 @@ let tarefas = [
     ['Tarefa LeoGeo', 'geo', '(Ap. 8 - M. 44/45/46 - Pág. )', '(881, 885, 887, 890, 893, 898, 901, 902, 904, 905, 907, 908, 910, 914, 921, 924, 925, 927, 930, 931, 933, 940)'], 
 ]
 
-let tema = `Tabagismo (ENEM) ou <br> Impactos da COVID-19 (VUNESP)`;
+let tema = `Cultura do Estupro (ENEM ou VUNESP) <br>  ou Gêneros (UNICAMP)`;
 
 const materias = {
     mat: ['Matemática &#128290', 'steelblue'],
