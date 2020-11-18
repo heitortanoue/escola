@@ -1,9 +1,9 @@
 let tarefas = [      
-    ['Tarefa Murilo', 'red', '(Ap. 9 - M. 27 - Pág. )', '(Lista no Drive)'],   
-    ['Tarefa Vlad', 'fil', '(Ap. 8 - M. 22/24 - Pág. 233 e 241)', '(422, 425, 428, 432, 438, 462, 463, 465, 469, 477)'],
-    ['Tarefa Rodrigo', 'bio', '(Ap. 9 - M. 51 - Pág. 91)', '(1001, 1002, 1005, 1009, 1010, 1013, 1018, 1019)'],
-    ['Tarefa Fefo', 'lit', '(Ap. 9 - M. 53 - Pág. 195)', '(1043, 1044, 1045, 1047, 1050, 1051)'],      
-    ['Tarefa Thiagão', 'fis', '(Ap. 8 - M. 23 - Pág. 91)', '(443, 446, 448, 449, 454, 456, 459)'],
+    ['Tarefa João César', 'fis', '(Ap. 8 - M. 48 - Pág. 41)', '(942, 947, 949, 951, 952, 958)'],   
+    ['Tarefa Tio Dani', 'bio', '(Ap. 8 - M. 46/47/48 - Pág. )', '(901, 903, 907, 911, 915, 925, 928, 931, 934, 936, 937, 941, 949, 950, 955, 960)'],
+    ['Tarefa Rafa', 'mat', '(Ap. 9 - M. 53 - Pág. 87)', '(1041, 1042, 1043, 1044, 1045, 1046, 1047, 1048)'],
+    ['Tarefa Zanin', 'geo', '(Ap. 9 - M. 27 - Pág. 223)', '(522, 523, 525, 527, 540)'],      
+    ['Tarefa Marcus Vinicius', 'qui', '(Ap. 9 - M. 51 - Pág. 156)', '(1001, 1004, 1008, 1011)'],
 ]
 
 let tema = `Cultura do Estupro (ENEM ou VUNESP) <br>  ou Gêneros (UNICAMP)`;
