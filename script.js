@@ -1,14 +1,15 @@
 let tarefas = [      
-    ['Tarefa Zé Ferreira', 'gra', '(Ap. 9 - M. 53/54 - Pág. 154)', '(1041, 1044, 1046, 1049, 1050, 1052, 1053, 1057, 1059, 1061, 1065, 1070, 1071, 1074, 1076, 1079)'],
-    ['Tarefa LeoGeo I', 'geo', '(Ap. 9 - M. 46 - Pág. )', '(921, 924, 925, 927, 930, 931, 933, 940)'],
-    ['Tarefa LeoGeo II', 'geo', '(Ap. 10 - M. 53 - Pág. 160)', '(1062, 1063, 1064, 1065, 1066, 1068, 1071, 1073, 1077)'],    
-    ['Tarefa Tadaiti', 'qui', '(Ap. 9 - M. 27 - Pág. 200)', '(521, 523, 524, 527, 531, 535)'],
-    ['Tarefa João César', 'fis', '(Ap. 8 - M. 48 - Pág. 41)', '(942, 947, 949, 951, 952, 958)'],  
-    ['Tarefa Vini', 'mat', '(Ap. 9 - M. 27/28 - Pág. 124)', '(544, ,546, 548, 554, 556)'],    
-     
+    ['Tarefa Ariad', 'soc', '(Ap. 9 e 10 - M. 26/27/28 - Pág. 279)', '(502, 508, 520, 531, 539, 544, 550, 552, 558)'],
+    ['Tarefa Lucas I', 'fis', '(Ap. 9 - M. 53 - Pág. 78)', '(1041, 1042, 1045, 1049, 1053, 1057, 1058*)'],
+    ['Tarefa Lucas II', 'fis', '(Ap. 9 - M. 54 - Pág. 81)', '(1061, 1062, 1064, 1065, 1067, 1075, 1079*)'],
+    ['Tarefa Lucas III', 'fis', '(Ap. 10 - M. 55 - Pág. 26)', '(1081, 1082, 1087, 1090, 1093, 1097, 1100*)'],
+    ['Tarefa Pena I', 'lit', '(Ap. 9 - M. 54 - Pág. 201)', '(1061, 1064, 1067, 1068, 1069)'],
+    ['Tarefa Pena II', 'lit', '(Ap. 10 - M. 55 - Pág. 91)', '(1084, 1086, 1088, 1090, 1091, 1094)'],
+
+    //['Tarefa LeoGeo II', 'geo', '(Ap. 10 - M. 53 - Pág. 160)', '(1062, 1063, 1064, 1065, 1066, 1068, 1071, 1073, 1077)'],   
 ]
 
-let tema = `Cultura do Estupro (ENEM ou VUNESP) <br>  ou Gêneros (UNICAMP)`;
+let tema = `Escolher um Tema (ENEM) <br>  ou Liberdade de Expressão (VUNESP)`;
 
 const materias = {
     mat: ['Matemática &#128290', 'steelblue'],
